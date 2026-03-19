@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "Netflix",
+    "amount": 50,
+    "category": "Assinaturas",
+    "date": "03-18-2026",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-19T00:04:42.791Z"
+  },
+  {
+    "id": 2,
+    "title": "Netflix",
+    "amount": 50,
+    "category": "Assinaturas",
+    "date": "03-18-2026",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-19T00:04:44.299Z"
+  }
+]
