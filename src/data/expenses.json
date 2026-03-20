@@ -6,7 +6,7 @@
     "category": "Assinaturas",
     "date": "03-18-2026",
     "description": "Gasto com assinatura",
-    "createdAt": "2026-03-19T00:04:42.791Z"
+    "createdAt": "2026-03-20T17:08:21.129Z"
   },
   {
     "id": 2,
@@ -15,6 +15,39 @@
     "category": "Assinaturas",
     "date": "03-18-2026",
     "description": "Gasto com assinatura",
-    "createdAt": "2026-03-19T00:04:44.299Z"
+    "createdAt": "2026-03-20T17:08:43.030Z"
+  },
+  {
+    "id": 3,
+    "title": "Netflix",
+    "category": "Assinaturas",
+    "date": "03-18-2026",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-20T17:08:52.560Z"
+  },
+  {
+    "id": 4,
+    "title": "Netflix",
+    "category": "Assinaturas",
+    "date": "03-18",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-20T17:09:23.574Z"
+  },
+  {
+    "id": 5,
+    "title": "Netflix",
+    "category": "Assinaturas",
+    "date": "18-02-2",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-20T17:09:56.409Z"
+  },
+  {
+    "id": 6,
+    "title": "Netflix",
+    "amount": 50,
+    "category": 1,
+    "date": "03-18-2026",
+    "description": "Gasto com assinatura",
+    "createdAt": "2026-03-20T17:10:38.325Z"
   }
 ]

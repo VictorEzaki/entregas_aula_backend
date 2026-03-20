@@ -1,5 +1,5 @@
-const express = require('express');
-const Expense = require('./src/models/expense.js');
+const express = require("express");
+const Expense = require("./src/models/expense.js");
 
 const app = express();
 
@@ -7,24 +7,43 @@ app.use(express.json());
 
 cont = 0;
 
-app.post('/despesa/novo', (req, res) => {
-    try {
-        const { title, amount, category, date, description } = req.body;
-    
-        if (!title) {
-            return res.status(400).send("O título da despeasa é obrigatório");
-        }
-    
-        const expense = Expense.create(title, amount, category, date, description);
+app.post("/despesa/novo", (req, res) => {
+  try {
+    const { title, amount, category, date, description } = req.body;
 
-        res.status(201).json(expense);
-    } catch (error) {
-        res.status(400).json({
-            erro: error
-        })
+    // verifica se o title foi enviado ou se está com o tipo correto
+    if (!title || typeof title !== "string") {
+      return res.status(400).send("Título de despesa ausente ou inválido.");
     }
-    
-})
+
+    // verifica se amount é number caso tenha sido enviado
+    if (amount && typeof amount !== "number") {
+      return res.status(400).send("Valor de despesa inválido.");
+    }
+
+    // não funciona também
+    if (category && typeof category !== "string") {
+      return res.status(400).send("Categoria inválida.");
+    }
+
+    // não funciona, verificar outro jeito de validar
+    if (!date || isNaN(new Date(date).getTime())) {
+      return res.status(400).send("A data fornecida é inválida.");
+    }
+
+    if (!description || typeof description !== "string") {
+      return res.status(400).send("Descrição de despesa ausente ou inválido.");
+    }
+
+    const expense = Expense.create(title, amount, category, date, description);
+
+    res.status(201).json(expense);
+  } catch (error) {
+    res.status(400).json({
+      erro: error,
+    });
+  }
+});
 
 // app.get('/expense', (req, res) => {
 //     const users = Expense.getAll();
@@ -62,5 +81,5 @@ app.post('/despesa/novo', (req, res) => {
 // })
 
 app.listen(1080, () => {
-    console.info(`Servidor rodando na porta ${1080}`);
-})
+  console.info(`Servidor rodando na porta ${1080}`);
+});
