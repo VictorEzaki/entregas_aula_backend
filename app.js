@@ -5,9 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-cont = 0;
-
-app.post("/despesa/novo", (req, res) => {
+app.post("/expense/new", (req, res) => {
   try {
     const { title, amount, category, date, description } = req.body;
     
@@ -67,7 +65,7 @@ app.post("/despesa/novo", (req, res) => {
   }
 });
 
-app.get('/despesa/listar', (req, res) => {
+app.get('/expenses/list', (req, res) => {
   try {
     const { category }  = req.query;
     let{ date }         = req.query;
@@ -99,7 +97,7 @@ app.get('/despesa/listar', (req, res) => {
   }
 })
 
-app.get('/despesa/:id', (req, res) => {
+app.get('/expense/:id', (req, res) => {
   try {
     const { id } = req.params;
     
@@ -122,7 +120,7 @@ app.get('/despesa/:id', (req, res) => {
   }
 })
 
-app.put('/despesa/editar/:id', (req, res) => {
+app.put('/expense/edit/:id', (req, res) => {
   try {
     const { title, amount, category, date, description } = req.body;
     const { id } = req.params;
@@ -184,7 +182,7 @@ app.put('/despesa/editar/:id', (req, res) => {
   }
 })
 
-app.delete('/despesa/excluir/:id', (req, res) => {
+app.delete('/expense/delete/:id', (req, res) => {
   try {
     const { id } = req.params;
 
@@ -192,7 +190,50 @@ app.delete('/despesa/excluir/:id', (req, res) => {
     
     res.status(204).json();
   } catch (error) {
-    
+    res.status(400).send({
+      erro: error.message
+    })
+  }
+})
+
+// Extras
+app.get('/expense/summary/total', (req, res) => {
+  try {
+    const totalExpenses = Expense.getTotalExpenses();
+
+    if (!totalExpenses) {
+      return res.status(400).send({
+        message: 'Nenhuma despesa cadastrada para somar.'
+      })
+    }
+
+    res.status(200).json(totalExpenses);
+  } catch (error) {
+     res.status(400).json(
+      {
+        erro: error.message
+      }
+    )
+  }
+})
+
+app.get('/expense/summary/category', (req, res) => {
+  try {
+    const totalExpensesByCategory = Expense.getTotalExpensesByCategory();
+
+    if (!totalExpensesByCategory) {
+      return res.status(400).send({
+        message: 'Nenhuma despesa cadastrada para somar.'
+      })
+    }
+
+    res.status(200).json(totalExpensesByCategory);
+  } catch (error) {
+     res.status(400).json(
+      {
+        erro: error.message
+      }
+    )
   }
 })
 

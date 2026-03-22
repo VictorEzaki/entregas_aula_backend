@@ -31,18 +31,18 @@ class Expense {
         
         return expenseList;
     }
-
+    
     getById(id) {
         if (!id) {
             throw new Error('ID não informado.');
         }
-
+        
         if (id < 1) {
             throw new Error('ID não pode ser menor que 1.');
         }
-
+        
         let expenses = this.getAll();
-
+        
         return expenses.find(e => e.id === id);
     }
     
@@ -91,19 +91,19 @@ class Expense {
         
         return newExpense;
     }
-
+    
     update(title, amount, category, date, description, id) {
         // validações da regra de negócio
         // ID é obrigatório para edição
         if (!id) {
             throw new Error('ID é obrigatório.')
         }
-
+        
         // verifica se ID é maior que zero
         if (id < 1) {
             throw new Error('ID não pode ser menor que 1.')
         }
-
+        
         // O campo title é obrigatório
         if (!title) {
             throw new Error('Título de despesa é um campo obrigatório.')
@@ -135,22 +135,22 @@ class Expense {
             description,
             createdAt: expenseList[index].createdAt
         }
-
+        
         expenseList[index] = updatedExpense;
-
+        
         if (fs.existsSync(pathData)) {
             fs.writeFileSync(pathData, JSON.stringify(expenseList, null, 2));
         }
-
+        
         return updatedExpense;
     }
-
+    
     delete(id) {
         // ID é obrigatório para edição
         if (!id) {
             throw new Error('ID é obrigatório.')
         }
-
+        
         // verifica se ID é maior que zero
         if (id < 1) {
             throw new Error('ID não pode ser menor que 1.')
@@ -159,12 +159,42 @@ class Expense {
         let expenseList = this.getAll();
         const index = expenseList.findIndex(e => e.id === id);
         expenseList.splice(index, 1);
-
+        
         if (fs.existsSync(pathData)) {
             fs.writeFileSync(pathData, JSON.stringify(expenseList, null, 2));
         }
         
-        return null
+        return null;
+    }
+    
+    getTotalExpenses() {
+        const expenses = this.getAll();
+        
+        const totalExpense = expenses.reduce((acc, expense) => {
+            return acc + (Number(expense.amount) || 0);
+        }, 0);
+        
+        return {
+            total: totalExpense
+        };
+    }
+    
+    getTotalExpensesByCategory() {
+        const expenses = this.getAll();
+        
+        const totals = expenses.reduce((acc, expense) => {
+            const category = expense.category || "Sem Categoria";
+            const amount = Number(expense.amount) || 0;
+            
+            if (!acc[category]) {
+                acc[category] = 0;
+            }
+            
+            acc[category] += amount;
+            return acc;
+        }, {});
+        
+        return totals;
     }
 }
 
