@@ -1,53 +1,920 @@
 [
   {
     "id": 1,
-    "title": "Netflix",
-    "amount": 50,
-    "category": "Assinaturas",
-    "date": "03-18-2026",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:08:21.129Z"
-  },
-  {
-    "id": 2,
-    "title": "Netflix",
-    "amount": 50,
-    "category": "Assinaturas",
-    "date": "03-18-2026",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:08:43.030Z"
-  },
-  {
-    "id": 3,
-    "title": "Netflix",
-    "category": "Assinaturas",
-    "date": "03-18-2026",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:08:52.560Z"
+    "title": "teste",
+    "amount": 120.5,
+    "category": "comida",
+    "date": "2026-03-15",
+    "description": "Compra semanal",
+    "createdAt": "2026-03-01T10:00:00.000Z"
   },
   {
     "id": 4,
-    "title": "Netflix",
-    "category": "Assinaturas",
-    "date": "03-18",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:09:23.574Z"
+    "title": "Aporte CDB",
+    "amount": 500,
+    "category": "investimento",
+    "date": "2026-03-02",
+    "description": "Reserva de emergência",
+    "createdAt": "2026-03-02T09:00:00.000Z"
   },
   {
     "id": 5,
-    "title": "Netflix",
-    "category": "Assinaturas",
-    "date": "18-02-2",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:09:56.409Z"
+    "title": "Conta de Luz",
+    "amount": 210.15,
+    "category": "contas de casa",
+    "date": "2026-03-03",
+    "description": "Celesc março",
+    "createdAt": "2026-03-03T08:30:00.000Z"
   },
   {
     "id": 6,
+    "title": "Ifood",
+    "amount": 75,
+    "category": "comida",
+    "date": "2026-03-03",
+    "description": "Jantar terça",
+    "createdAt": "2026-03-03T20:15:00.000Z"
+  },
+  {
+    "id": 7,
+    "title": "Dentista",
+    "amount": 350,
+    "category": "saúde",
+    "date": "2026-03-04",
+    "description": "Limpeza",
+    "createdAt": "2026-03-04T14:00:00.000Z"
+  },
+  {
+    "id": 8,
+    "title": "Assinatura Game Pass",
+    "amount": 49.99,
+    "category": "lazer",
+    "date": "2026-03-04",
+    "description": "Jogos mensal",
+    "createdAt": "2026-03-04T10:00:00.000Z"
+  },
+  {
+    "id": 9,
+    "title": "Tesouro Direto",
+    "amount": 200,
+    "category": "investimento",
+    "date": "2026-03-05",
+    "description": "Aposentadoria",
+    "createdAt": "2026-03-05T11:00:00.000Z"
+  },
+  {
+    "id": 10,
+    "title": "Internet",
+    "amount": 99.9,
+    "category": "contas de casa",
+    "date": "2026-03-05",
+    "description": "Fibra óptica",
+    "createdAt": "2026-03-05T09:45:00.000Z"
+  },
+  {
+    "id": 11,
+    "title": "Padaria",
+    "amount": 22.4,
+    "category": "comida",
+    "date": "2026-03-06",
+    "description": "Café da manhã",
+    "createdAt": "2026-03-06T07:30:00.000Z"
+  },
+  {
+    "id": 12,
+    "title": "Academia",
+    "amount": 120,
+    "category": "saúde",
+    "date": "2026-03-06",
+    "description": "Mensalidade",
+    "createdAt": "2026-03-06T18:00:00.000Z"
+  },
+  {
+    "id": 13,
+    "title": "Show Nacional",
+    "amount": 250,
+    "category": "lazer",
+    "date": "2026-03-07",
+    "description": "Ingresso show",
+    "createdAt": "2026-03-07T22:00:00.000Z"
+  },
+  {
+    "id": 14,
+    "title": "Fundo Imobiliário",
+    "amount": 150,
+    "category": "investimento",
+    "date": "2026-03-07",
+    "description": "Cotas HGLG11",
+    "createdAt": "2026-03-07T10:30:00.000Z"
+  },
+  {
+    "id": 15,
+    "title": "Condomínio",
+    "amount": 450,
+    "category": "contas de casa",
+    "date": "2026-03-08",
+    "description": "Taxa mensal",
+    "createdAt": "2026-03-08T08:00:00.000Z"
+  },
+  {
+    "id": 16,
+    "title": "Restaurante Vegetariano",
+    "amount": 45,
+    "category": "comida",
+    "date": "2026-03-08",
+    "description": "Almoço domingo",
+    "createdAt": "2026-03-08T13:00:00.000Z"
+  },
+  {
+    "id": 17,
+    "title": "Exame de Sangue",
+    "amount": 180,
+    "category": "saúde",
+    "date": "2026-03-09",
+    "description": "Laboratório",
+    "createdAt": "2026-03-09T07:15:00.000Z"
+  },
+  {
+    "id": 18,
+    "title": "Livro Técnico",
+    "amount": 89.9,
+    "category": "lazer",
+    "date": "2026-03-09",
+    "description": "Estudo e lazer",
+    "createdAt": "2026-03-09T16:40:00.000Z"
+  },
+  {
+    "id": 19,
+    "title": "Ações PETR4",
+    "amount": 300,
+    "category": "investimento",
+    "date": "2026-03-10",
+    "description": "Compra de ativos",
+    "createdAt": "2026-03-10T11:20:00.000Z"
+  },
+  {
+    "id": 20,
+    "title": "Conta de Água",
+    "amount": 65.4,
+    "category": "contas de casa",
+    "date": "2026-03-10",
+    "description": "Casan",
+    "createdAt": "2026-03-10T09:10:00.000Z"
+  },
+  {
+    "id": 21,
+    "title": "Feira Orgânica",
+    "amount": 55,
+    "category": "comida",
+    "date": "2026-03-11",
+    "description": "Frutas e verduras",
+    "createdAt": "2026-03-11T17:30:00.000Z"
+  },
+  {
+    "id": 22,
+    "title": "Terapia",
+    "amount": 150,
+    "category": "saúde",
+    "date": "2026-03-11",
+    "description": "Sessão semanal",
+    "createdAt": "2026-03-11T19:00:00.000Z"
+  },
+  {
+    "id": 23,
+    "title": "Aluguel de Bike",
+    "amount": 15,
+    "category": "lazer",
+    "date": "2026-03-12",
+    "description": "Passeio parque",
+    "createdAt": "2026-03-12T15:00:00.000Z"
+  },
+  {
+    "id": 24,
+    "title": "ETF IVVB11",
+    "amount": 280,
+    "category": "investimento",
+    "date": "2026-03-12",
+    "description": "Mercado americano",
+    "createdAt": "2026-03-12T10:45:00.000Z"
+  },
+  {
+    "id": 25,
+    "title": "Gás de Cozinha",
+    "amount": 115,
+    "category": "contas de casa",
+    "date": "2026-03-13",
+    "description": "Botijão P13",
+    "createdAt": "2026-03-13T14:20:00.000Z"
+  },
+  {
+    "id": 26,
+    "title": "Churrascaria",
+    "amount": 130,
+    "category": "comida",
+    "date": "2026-03-13",
+    "description": "Confraternização",
+    "createdAt": "2026-03-13T21:00:00.000Z"
+  },
+  {
+    "id": 27,
+    "title": "Multivitamínico",
+    "amount": 62,
+    "category": "saúde",
+    "date": "2026-03-14",
+    "description": "Suplementos",
+    "createdAt": "2026-03-14T10:30:00.000Z"
+  },
+  {
+    "id": 28,
+    "title": "Parque Temático",
+    "amount": 180,
+    "category": "lazer",
+    "date": "2026-03-14",
+    "description": "Day use",
+    "createdAt": "2026-03-14T09:00:00.000Z"
+  },
+  {
+    "id": 29,
+    "title": "Cripto BTC",
+    "amount": 100,
+    "category": "investimento",
+    "date": "2026-03-15",
+    "description": "Fracionado Bitcoin",
+    "createdAt": "2026-03-15T22:00:00.000Z"
+  },
+  {
+    "id": 30,
+    "title": "Seguro Residencial",
+    "amount": 45,
+    "category": "contas de casa",
+    "date": "2026-03-15",
+    "description": "Parcela 3/10",
+    "createdAt": "2026-03-15T11:45:00.000Z"
+  },
+  {
+    "id": 31,
+    "title": "Cafeteria",
+    "amount": 18.5,
+    "category": "comida",
+    "date": "2026-03-16",
+    "description": "Espresso e quiche",
+    "createdAt": "2026-03-16T16:00:00.000Z"
+  },
+  {
+    "id": 32,
+    "title": "Oftalmologista",
+    "amount": 200,
+    "category": "saúde",
+    "date": "2026-03-16",
+    "description": "Consulta rotina",
+    "createdAt": "2026-03-16T14:00:00.000Z"
+  },
+  {
+    "id": 33,
+    "title": "Streaming Música",
+    "amount": 21.9,
+    "category": "lazer",
+    "date": "2026-03-17",
+    "description": "Plano Premium",
+    "createdAt": "2026-03-17T08:15:00.000Z"
+  },
+  {
+    "id": 34,
+    "title": "LCI Imobiliário",
+    "amount": 600,
+    "category": "investimento",
+    "date": "2026-03-17",
+    "description": "Renda fixa isenta",
+    "createdAt": "2026-03-17T13:20:00.000Z"
+  },
+  {
+    "id": 35,
+    "title": "IPTU",
+    "amount": 120,
+    "category": "contas de casa",
+    "date": "2026-03-18",
+    "description": "Parcela março",
+    "createdAt": "2026-03-18T09:50:00.000Z"
+  },
+  {
+    "id": 36,
+    "title": "Pizzaria",
+    "amount": 88,
+    "category": "comida",
+    "date": "2026-03-18",
+    "description": "Pizza família",
+    "createdAt": "2026-03-18T20:30:00.000Z"
+  },
+  {
+    "id": 37,
+    "title": "Pomada Labial",
+    "amount": 12.5,
+    "category": "saúde",
+    "date": "2026-03-19",
+    "description": "Farmácia",
+    "createdAt": "2026-03-19T18:10:00.000Z"
+  },
+  {
+    "id": 38,
+    "title": "Teatro",
+    "amount": 70,
+    "category": "lazer",
+    "date": "2026-03-19",
+    "description": "Peça comédia",
+    "createdAt": "2026-03-19T21:00:00.000Z"
+  },
+  {
+    "id": 39,
+    "title": "Tesouro IPCA",
+    "amount": 400,
+    "category": "investimento",
+    "date": "2026-03-20",
+    "description": "Proteção inflação",
+    "createdAt": "2026-03-20T10:00:00.000Z"
+  },
+  {
+    "id": 40,
+    "title": "Manutenção Jardim",
+    "amount": 100,
+    "category": "contas de casa",
+    "date": "2026-03-20",
+    "description": "Serviço mensal",
+    "createdAt": "2026-03-20T15:30:00.000Z"
+  },
+  {
+    "id": 41,
+    "title": "Açougue",
+    "amount": 140,
+    "category": "comida",
+    "date": "2026-03-21",
+    "description": "Carnes semana",
+    "createdAt": "2026-03-21T11:00:00.000Z"
+  },
+  {
+    "id": 42,
+    "title": "Natação",
+    "amount": 160,
+    "category": "saúde",
+    "date": "2026-03-21",
+    "description": "Mensalidade clube",
+    "createdAt": "2026-03-21T18:45:00.000Z"
+  },
+  {
+    "id": 43,
+    "title": "Boliche",
+    "amount": 55,
+    "category": "lazer",
+    "date": "2026-03-22",
+    "description": "Diversão amigos",
+    "createdAt": "2026-03-22T16:20:00.000Z"
+  },
+  {
+    "id": 44,
+    "title": "Ações VALE3",
+    "amount": 350,
+    "category": "investimento",
+    "date": "2026-03-22",
+    "description": "Renda variável",
+    "createdAt": "2026-03-22T12:00:00.000Z"
+  },
+  {
+    "id": 45,
+    "title": "Taxa Lixo",
+    "amount": 32.1,
+    "category": "contas de casa",
+    "date": "2026-03-23",
+    "description": "Prefeitura",
+    "createdAt": "2026-03-23T08:15:00.000Z"
+  },
+  {
+    "id": 46,
+    "title": "Mercado Bairro",
+    "amount": 42,
+    "category": "comida",
+    "date": "2026-03-23",
+    "description": "Itens básicos",
+    "createdAt": "2026-03-23T17:40:00.000Z"
+  },
+  {
+    "id": 47,
+    "title": "Psicólogo",
+    "amount": 150,
+    "category": "saúde",
+    "date": "2026-03-24",
+    "description": "Sessão 2",
+    "createdAt": "2026-03-24T19:00:00.000Z"
+  },
+  {
+    "id": 48,
+    "title": "Kart",
+    "amount": 110,
+    "category": "lazer",
+    "date": "2026-03-24",
+    "description": "Corrida lazer",
+    "createdAt": "2026-03-24T20:30:00.000Z"
+  },
+  {
+    "id": 49,
+    "title": "LCA Agronegócio",
+    "amount": 250,
+    "category": "investimento",
+    "date": "2026-03-25",
+    "description": "Renda fixa",
+    "createdAt": "2026-03-25T14:10:00.000Z"
+  },
+  {
+    "id": 50,
+    "title": "Telefone Móvel",
+    "amount": 54.9,
+    "category": "contas de casa",
+    "date": "2026-03-25",
+    "description": "Plano controle",
+    "createdAt": "2026-03-25T09:25:00.000Z"
+  },
+  {
+    "id": 51,
+    "title": "Hamburgueria",
+    "amount": 62,
+    "category": "comida",
+    "date": "2026-03-26",
+    "description": "Combo artesanal",
+    "createdAt": "2026-03-26T21:15:00.000Z"
+  },
+  {
+    "id": 52,
+    "title": "Protetor Solar",
+    "amount": 78,
+    "category": "saúde",
+    "date": "2026-03-26",
+    "description": "Cuidado pele",
+    "createdAt": "2026-03-26T10:45:00.000Z"
+  },
+  {
+    "id": 53,
+    "title": "Museu",
+    "amount": 20,
+    "category": "lazer",
+    "date": "2026-03-27",
+    "description": "Exposição arte",
+    "createdAt": "2026-03-27T14:30:00.000Z"
+  },
+  {
+    "id": 54,
+    "title": "Cripto ETH",
+    "amount": 150,
+    "category": "investimento",
+    "date": "2026-03-27",
+    "description": "Ethereum",
+    "createdAt": "2026-03-27T11:50:00.000Z"
+  },
+  {
+    "id": 55,
+    "title": "Diarista",
+    "amount": 200,
+    "category": "contas de casa",
+    "date": "2026-03-28",
+    "description": "Limpeza geral",
+    "createdAt": "2026-03-28T08:00:00.000Z"
+  },
+  {
+    "id": 56,
+    "title": "Sacolão",
+    "amount": 38,
+    "category": "comida",
+    "date": "2026-03-28",
+    "description": "Verduras frescas",
+    "createdAt": "2026-03-28T16:00:00.000Z"
+  },
+  {
+    "id": 57,
+    "title": "Massagem Relax",
+    "amount": 120,
+    "category": "saúde",
+    "date": "2026-03-29",
+    "description": "Bem-estar",
+    "createdAt": "2026-03-29T17:00:00.000Z"
+  },
+  {
+    "id": 58,
+    "title": "Aluguel Quadra",
+    "amount": 40,
+    "category": "lazer",
+    "date": "2026-03-29",
+    "description": "Futebol amigos",
+    "createdAt": "2026-03-29T19:30:00.000Z"
+  },
+  {
+    "id": 59,
+    "title": "Tesouro Selic",
+    "amount": 300,
+    "category": "investimento",
+    "date": "2026-03-30",
+    "description": "Liquidez diária",
+    "createdAt": "2026-03-30T10:00:00.000Z"
+  },
+  {
+    "id": 60,
+    "title": "Material Limpeza",
+    "amount": 85,
+    "category": "contas de casa",
+    "date": "2026-03-30",
+    "description": "Abastecimento",
+    "createdAt": "2026-03-30T14:15:00.000Z"
+  },
+  {
+    "id": 61,
+    "title": "Peixaria",
+    "amount": 95,
+    "category": "comida",
+    "date": "2026-03-31",
+    "description": "Almoço especial",
+    "createdAt": "2026-03-31T11:30:00.000Z"
+  },
+  {
+    "id": 62,
+    "title": "Colírio",
+    "amount": 25,
+    "category": "saúde",
+    "date": "2026-03-31",
+    "description": "Farmácia",
+    "createdAt": "2026-03-31T15:20:00.000Z"
+  },
+  {
+    "id": 63,
+    "title": "Games Steam",
+    "amount": 35,
+    "category": "lazer",
+    "date": "2026-03-01",
+    "description": "Promoção",
+    "createdAt": "2026-03-01T22:10:00.000Z"
+  },
+  {
+    "id": 64,
+    "title": "COE Tech",
+    "amount": 1000,
+    "category": "investimento",
+    "date": "2026-03-02",
+    "description": "Investimento estruturado",
+    "createdAt": "2026-03-02T13:45:00.000Z"
+  },
+  {
+    "id": 65,
+    "title": "Conserto Torneira",
+    "amount": 45,
+    "category": "contas de casa",
+    "date": "2026-03-03",
+    "description": "Reparo cozinha",
+    "createdAt": "2026-03-03T10:20:00.000Z"
+  },
+  {
+    "id": 66,
+    "title": "Sorveteria",
+    "amount": 22,
+    "category": "comida",
+    "date": "2026-03-04",
+    "description": "Sobremesa",
+    "createdAt": "2026-03-04T16:40:00.000Z"
+  },
+  {
+    "id": 67,
+    "title": "Suplemento Whey",
+    "amount": 140,
+    "category": "saúde",
+    "date": "2026-03-05",
+    "description": "Proteína",
+    "createdAt": "2026-03-05T09:10:00.000Z"
+  },
+  {
+    "id": 68,
+    "title": "Passeio Turístico",
+    "amount": 75,
+    "category": "lazer",
+    "date": "2026-03-06",
+    "description": "Guia local",
+    "createdAt": "2026-03-06T14:00:00.000Z"
+  },
+  {
+    "id": 69,
+    "title": "Previdência Privada",
+    "amount": 250,
+    "category": "investimento",
+    "date": "2026-03-07",
+    "description": "PGBL",
+    "createdAt": "2026-03-07T08:30:00.000Z"
+  },
+  {
+    "id": 70,
+    "title": "Lâmpadas LED",
+    "amount": 60,
+    "category": "contas de casa",
+    "date": "2026-03-08",
+    "description": "Troca iluminação",
+    "createdAt": "2026-03-08T11:15:00.000Z"
+  },
+  {
+    "id": 71,
+    "title": "Sushi delivery",
+    "amount": 110,
+    "category": "comida",
+    "date": "2026-03-09",
+    "description": "Jantar especial",
+    "createdAt": "2026-03-09T20:45:00.000Z"
+  },
+  {
+    "id": 72,
+    "title": "Yoga",
+    "amount": 130,
+    "category": "saúde",
+    "date": "2026-03-10",
+    "description": "Mensalidade",
+    "createdAt": "2026-03-10T07:00:00.000Z"
+  },
+  {
+    "id": 73,
+    "title": "HQ Colecionador",
+    "amount": 45,
+    "category": "lazer",
+    "date": "2026-03-11",
+    "description": "Quadrinhos",
+    "createdAt": "2026-03-11T18:30:00.000Z"
+  },
+  {
+    "id": 74,
+    "title": "Fundo Cambial",
+    "amount": 200,
+    "category": "investimento",
+    "date": "2026-03-12",
+    "description": "Exposição dólar",
+    "createdAt": "2026-03-12T10:15:00.000Z"
+  },
+  {
+    "id": 75,
+    "title": "Seguro de Vida",
+    "amount": 35,
+    "category": "contas de casa",
+    "date": "2026-03-13",
+    "description": "Proteção",
+    "createdAt": "2026-03-13T09:00:00.000Z"
+  },
+  {
+    "id": 76,
+    "title": "Pastelaria",
+    "amount": 28,
+    "category": "comida",
+    "date": "2026-03-14",
+    "description": "Lanche feira",
+    "createdAt": "2026-03-14T10:20:00.000Z"
+  },
+  {
+    "id": 77,
+    "title": "Kits Primeiros Socorros",
+    "amount": 45,
+    "category": "saúde",
+    "date": "2026-03-15",
+    "description": "Doméstico",
+    "createdAt": "2026-03-15T15:40:00.000Z"
+  },
+  {
+    "id": 78,
+    "title": "Aluguel Patins",
+    "amount": 25,
+    "category": "lazer",
+    "date": "2026-03-16",
+    "description": "Parque beira-mar",
+    "createdAt": "2026-03-16T17:10:00.000Z"
+  },
+  {
+    "id": 79,
+    "title": "Ações ITUB4",
+    "amount": 450,
+    "category": "investimento",
+    "date": "2026-03-17",
+    "description": "Setor bancário",
+    "createdAt": "2026-03-17T11:00:00.000Z"
+  },
+  {
+    "id": 80,
+    "title": "Filtro de Água",
+    "amount": 80,
+    "category": "contas de casa",
+    "date": "2026-03-18",
+    "description": "Troca refil",
+    "createdAt": "2026-03-18T14:30:00.000Z"
+  },
+  {
+    "id": 81,
+    "title": "Tapiocaria",
+    "amount": 15,
+    "category": "comida",
+    "date": "2026-03-19",
+    "description": "Lanche rápido",
+    "createdAt": "2026-03-19T16:50:00.000Z"
+  },
+  {
+    "id": 82,
+    "title": "Check-up Cardio",
+    "amount": 300,
+    "category": "saúde",
+    "date": "2026-03-20",
+    "description": "Eletrocardiograma",
+    "createdAt": "2026-03-20T08:00:00.000Z"
+  },
+  {
+    "id": 83,
+    "title": "Paintball",
+    "amount": 90,
+    "category": "lazer",
+    "date": "2026-03-21",
+    "description": "Evento empresa",
+    "createdAt": "2026-03-21T15:00:00.000Z"
+  },
+  {
+    "id": 84,
+    "title": "Debêntures Vale",
+    "amount": 500,
+    "category": "investimento",
+    "date": "2026-03-22",
+    "description": "Crédito privado",
+    "createdAt": "2026-03-22T13:20:00.000Z"
+  },
+  {
+    "id": 85,
+    "title": "Ração Pet",
+    "amount": 180,
+    "category": "contas de casa",
+    "date": "2026-03-23",
+    "description": "Alimentação pet",
+    "createdAt": "2026-03-23T11:45:00.000Z"
+  },
+  {
+    "id": 86,
+    "title": "Mercado Gourmet",
+    "amount": 120,
+    "category": "comida",
+    "date": "2026-03-24",
+    "description": "Queijos e vinhos",
+    "createdAt": "2026-03-24T18:20:00.000Z"
+  },
+  {
+    "id": 87,
+    "title": "Aparelho Dental",
+    "amount": 150,
+    "category": "saúde",
+    "date": "2026-03-25",
+    "description": "Manutenção",
+    "createdAt": "2026-03-25T14:00:00.000Z"
+  },
+  {
+    "id": 88,
+    "title": "Passeio de Barco",
+    "amount": 200,
+    "category": "lazer",
+    "date": "2026-03-26",
+    "description": "Ilha",
+    "createdAt": "2026-03-26T09:30:00.000Z"
+  },
+  {
+    "id": 89,
+    "title": "Tesouro Pré-fixado",
+    "amount": 250,
+    "category": "investimento",
+    "date": "2026-03-27",
+    "description": "Alocação 2029",
+    "createdAt": "2026-03-27T10:45:00.000Z"
+  },
+  {
+    "id": 90,
+    "title": "Pintura Parede",
+    "amount": 130,
+    "category": "contas de casa",
+    "date": "2026-03-28",
+    "description": "Material retoque",
+    "createdAt": "2026-03-28T16:10:00.000Z"
+  },
+  {
+    "id": 91,
+    "title": "Food Truck",
+    "amount": 35,
+    "category": "comida",
+    "date": "2026-03-29",
+    "description": "Festival",
+    "createdAt": "2026-03-29T20:00:00.000Z"
+  },
+  {
+    "id": 92,
+    "title": "Vacina Gripe",
+    "amount": 90,
+    "category": "saúde",
+    "date": "2026-03-30",
+    "description": "Imunização",
+    "createdAt": "2026-03-30T11:20:00.000Z"
+  },
+  {
+    "id": 93,
+    "title": "Workshop Fotografia",
+    "amount": 150,
+    "category": "lazer",
+    "date": "2026-03-31",
+    "description": "Hobbies",
+    "createdAt": "2026-03-31T14:00:00.000Z"
+  },
+  {
+    "id": 94,
+    "title": "Fundo de Ações",
+    "amount": 300,
+    "category": "investimento",
+    "date": "2026-03-01",
+    "description": "Gestão ativa",
+    "createdAt": "2026-03-01T09:15:00.000Z"
+  },
+  {
+    "id": 95,
+    "title": "Produtos Limpeza",
+    "amount": 42,
+    "category": "contas de casa",
+    "date": "2026-03-02",
+    "description": "Reposição",
+    "createdAt": "2026-03-02T16:30:00.000Z"
+  },
+  {
+    "id": 96,
+    "title": "Churrasco em Casa",
+    "amount": 160,
+    "category": "comida",
+    "date": "2026-03-03",
+    "description": "Carnes e carvão",
+    "createdAt": "2026-03-03T12:00:00.000Z"
+  },
+  {
+    "id": 97,
+    "title": "Óculos de Sol",
+    "amount": 400,
+    "category": "saúde",
+    "date": "2026-03-04",
+    "description": "Proteção UV",
+    "createdAt": "2026-03-04T13:45:00.000Z"
+  },
+  {
+    "id": 98,
+    "title": "Viagem Fim de Semana",
+    "amount": 1200,
+    "category": "lazer",
+    "date": "2026-03-05",
+    "description": "Hospedagem",
+    "createdAt": "2026-03-05T18:00:00.000Z"
+  },
+  {
+    "id": 99,
+    "title": "Cripto SOL",
+    "amount": 80,
+    "category": "investimento",
+    "date": "2026-03-06",
+    "description": "Solana",
+    "createdAt": "2026-03-06T21:30:00.000Z"
+  },
+  {
+    "id": 100,
+    "title": "IPTU Cota Única",
+    "amount": 850,
+    "category": "contas de casa",
+    "date": "2026-03-07",
+    "description": "Pagamento total",
+    "createdAt": "2026-03-07T09:00:00.000Z"
+  },
+  {
+    "id": 101,
     "title": "Netflix",
-    "amount": 50,
-    "category": 1,
-    "date": "03-18-2026",
-    "description": "Gasto com assinatura",
-    "createdAt": "2026-03-20T17:10:38.325Z"
+    "amount": 50.2,
+    "category": "Assinatura",
+    "date": "2026-03-20",
+    "description": "Assinatura da netflix",
+    "createdAt": "2026-03-22T16:55:51.624Z"
+  },
+  {
+    "id": 102,
+    "title": "Supermercado",
+    "amount": 150.5,
+    "category": "Alimentação",
+    "date": "2026-03-10",
+    "description": "Compra semanal",
+    "createdAt": "2026-03-22T17:36:53.227Z"
+  },
+  {
+    "id": 103,
+    "title": "Supermercado",
+    "amount": 150.5,
+    "category": "Alimentação",
+    "date": "2026-03-10",
+    "description": "Compra semanal",
+    "createdAt": "2026-03-22T18:47:45.024Z"
+  },
+  {
+    "id": 104,
+    "title": "Netflix",
+    "amount": 50.2,
+    "category": "Assinatura",
+    "date": "2026-03-20",
+    "description": "Assinatura da netflix",
+    "createdAt": "2026-03-22T18:48:41.141Z"
   }
 ]

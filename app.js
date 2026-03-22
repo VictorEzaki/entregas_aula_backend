@@ -10,76 +10,192 @@ cont = 0;
 app.post("/despesa/novo", (req, res) => {
   try {
     const { title, amount, category, date, description } = req.body;
-
+    
     // verifica se o title foi enviado ou se está com o tipo correto
-    if (!title || typeof title !== "string") {
-      return res.status(400).send("Título de despesa ausente ou inválido.");
+    if (title !== undefined && typeof title !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Título de despesa inválido."
+        }
+      );
     }
-
+    
     // verifica se amount é number caso tenha sido enviado
-    if (amount && typeof amount !== "number") {
-      return res.status(400).send("Valor de despesa inválido.");
+    if (amount !== undefined && typeof amount !== "number") {
+      return res.status(400).send(
+        {
+          erro: "Valor de despesa inválido."
+        }
+      );
     }
-
-    // não funciona também
-    if (category && typeof category !== "string") {
-      return res.status(400).send("Categoria inválida.");
+    
+    // verifica se categoria foi enviado no tipo correto
+    if (category !== undefined && typeof category !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Categoria inválida."
+        }
+      );
     }
-
-    // não funciona, verificar outro jeito de validar
-    if (!date || isNaN(new Date(date).getTime())) {
-      return res.status(400).send("A data fornecida é inválida.");
+    
+    // verifica se é uma data válida quando enviada
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (date !== undefined && !dateRegex.test(date)) {
+      return res.status(400).send(
+        {
+          erro: "Formato de data inválido. Use YYYY-MM-DD."
+        }
+      );
     }
-
-    if (!description || typeof description !== "string") {
-      return res.status(400).send("Descrição de despesa ausente ou inválido.");
+    
+    // verifica se foi enviado com o tipo correto(string)
+    if (description !== undefined && typeof description !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Descrição de despesa ausente ou inválido."
+        }
+      );
     }
-
+    
     const expense = Expense.create(title, amount, category, date, description);
-
+    
     res.status(201).json(expense);
   } catch (error) {
     res.status(400).json({
-      erro: error,
+      erro: error.message,
     });
   }
 });
 
-// app.get('/expense', (req, res) => {
-//     const users = Expense.getAll();
+app.get('/despesa/listar', (req, res) => {
+  try {
+    const { category }  = req.query;
+    let{ date }         = req.query;
+    
+    let expenses = Expense.getAll();
+    if (category) {
+      expenses = expenses.filter(expense => expense.category.toLowerCase() === category.toLowerCase());
+    }
+    
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (date !== undefined && !dateRegex.test(date)) {
+      return res.status(400).send(
+        {
+          erro: "Formato de data inválido. Use YYYY-MM-DD."
+        }
+      )
+    }
+    if (date) {
+      expenses = expenses.filter(expense => expense.date === date);
+    }
+    
+    res.status(200).json(expenses);
+  } catch (error) {
+    res.status(400).json(
+      {
+        erro: error.message
+      }
+    )
+  }
+})
 
-//     res.status(200).json(users);
-// })
-// app.get('/expense/:id', (req, res) => {
-//     const user = Expense.getById(Number(req.params.id));
+app.get('/despesa/:id', (req, res) => {
+  try {
+    const { id } = req.params;
+    
+    const expense = Expense.getById(Number(id));
+    if (!expense) {
+      return res.status(404).send(
+        {
+          erro: "Despesa não encontrada."
+        }
+      )
+    }
+    
+    res.status(200).json(expense);
+  } catch (error) {
+    res.status(400).json(
+      {
+        erro: error.message
+      }
+    )
+  }
+})
 
-//     res.status(200).json(user);
-// })
-// app.post('/expense', (req, res) => {
-//     const { email, password, name } = req.body
+app.put('/despesa/editar/:id', (req, res) => {
+  try {
+    const { title, amount, category, date, description } = req.body;
+    const { id } = req.params;
+    // verifica se o title foi enviado ou se está com o tipo correto
+    if (title !== undefined && typeof title !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Título de despesa inválido."
+        }
+      );
+    }
+    
+    // verifica se amount é number caso tenha sido enviado
+    if (amount !== undefined && typeof amount !== "number") {
+      return res.status(400).send(
+        {
+          erro: "Valor de despesa inválido."
+        }
+      );
+    }
+    
+    // verifica se categoria foi enviado no tipo correto
+    if (category !== undefined && typeof category !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Categoria inválida."
+        }
+      );
+    }
+    
+    // verifica se é uma data válida quando enviada
+    const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
+    if (date !== undefined && !dateRegex.test(date)) {
+      return res.status(400).send(
+        {
+          erro: "Formato de data inválido. Use YYYY-MM-DD."
+        }
+      );
+    }
+    
+    // verifica se foi enviado com o tipo correto(string)
+    if (description !== undefined && typeof description !== "string") {
+      return res.status(400).send(
+        {
+          erro: "Descrição de despesa ausente ou inválido."
+        }
+      );
+    }
+    
+    const expense = Expense.update(title, amount, category, date, description, Number(id));
+    
+    res.status(200).json(expense);
+  } catch (error) {
+    res.status(400).send(
+      {
+        erro: error.message
+      }
+    )
+  }
+})
 
-//     const user = Expense.create(email, password, name);
+app.delete('/despesa/excluir/:id', (req, res) => {
+  try {
+    const { id } = req.params;
 
-//     res.status(201).json(user);
-// })
-// app.put('/expense/:id', (req, res) => {
-//     const { email, password, name } = req.body
+    Expense.delete(Number(id));
+    
+    res.status(204).json();
+  } catch (error) {
+    
+  }
+})
 
-//     const user = Expense.update(
-//         Number(req.params.id),
-//         email,
-//         password,
-//         name
-//     );
-
-//     res.status(200).json(user);
-// })
-// app.delete('/expense/:id', (req, res) => {
-//     Expense.delete(Number(req.params.id));
-
-//     res.status(204).json();
-// })
-
-app.listen(1080, () => {
-  console.info(`Servidor rodando na porta ${1080}`);
+app.listen(3000, () => {
+  console.info(`Servidor rodando na porta ${3000}`);
 });
