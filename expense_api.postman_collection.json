@@ -1,0 +1,309 @@
+{
+  "info": {
+    "_postman_id": "3a5a65db-3e96-459a-a2eb-c707b326a87f",
+    "name": "expense_api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38160912"
+  },
+  "item": [
+    {
+      "name": "Despesa",
+      "item": [
+        {
+          "name": "Listar despesas",
+          "item": [
+            {
+              "name": "Summary",
+              "item": [
+                {
+                  "name": "Total",
+                  "protocolProfileBehavior": {
+                    "strictSSL": false,
+                    "followRedirects": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/expenses/summary/total",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "expenses",
+                        "summary",
+                        "total"
+                      ]
+                    }
+                  },
+                  "response": []
+                },
+                {
+                  "name": "Por categoria",
+                  "protocolProfileBehavior": {
+                    "strictSSL": false,
+                    "followRedirects": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/expenses/summary/category",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "expenses",
+                        "summary",
+                        "category"
+                      ]
+                    }
+                  },
+                  "response": []
+                }
+              ],
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ]
+            },
+            {
+              "name": "Por ID",
+              "protocolProfileBehavior": {
+                "strictSSL": false,
+                "followRedirects": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/expenses/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "expenses",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "21"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Todas/filtros",
+              "protocolProfileBehavior": {
+                "strictSSL": false,
+                "followRedirects": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/expenses?category=comida&date=2026-03-01",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "expenses"
+                  ],
+                  "query": [
+                    {
+                      "key": "category",
+                      "value": "comida"
+                    },
+                    {
+                      "key": "date",
+                      "value": "2026-03-01"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ],
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "exec": [],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ]
+        },
+        {
+          "name": "Criar despesa",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "followRedirects": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"Netflix\",\n  \"amount\": 50.20,\n  \"category\": \"Assinatura\",\n  \"date\": \"2026-03-20\",\n  \"description\": \"Assinatura da netflix\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/expenses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "expenses"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Editar despesa",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "followRedirects": true
+          },
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"teste\",\n  \"amount\": 120.50,\n  \"category\": \"comida\",\n  \"date\": \"2026-03-15\",\n  \"description\": \"Compra semanal\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/expenses/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "expenses",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deletar despesa",
+          "protocolProfileBehavior": {
+            "strictSSL": false,
+            "followRedirects": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/expenses/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "expenses",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "4"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    }
+  ]
+}
