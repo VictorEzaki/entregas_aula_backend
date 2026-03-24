@@ -46,7 +46,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 ## 1.4. Rotas e exemplos de requisições
 
 ### Criação de Despesa (POST)
-**Endpoint:** `/expense/new`
+**Endpoint:** `/expenses`
 
 **Payload:**
 ```json
@@ -60,7 +60,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 ```
 
 ### Listagem de despesas e seus filtros (GET)
-**Endpoint:** `/expenses/list`
+**Endpoint:** `/expenses`
 **Endpoint com filtro de categoria:** `/expenses/list?category=comida`
 **Endpoint com filtro de data:** `/expenses/list?date=2026-03-01`
 
@@ -80,7 +80,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 ```
 
 ### Busca de despesa por ID (GET)
-**Endpoint:** `/expenses/list/1`
+**Endpoint:** `/expenses/1`
 
 **Resposta (Exemplo):**
 ```json
@@ -97,7 +97,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 ```
 
 ### Edição de despesa (DELETE)
-**Endpoint:** `/expenses/edit/1`
+**Endpoint:** `/expenses/1`
 
 **Payload:**
 ```json
@@ -110,12 +110,12 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 }
 ```
 
-### Edição de despesa (PUT)
-**Endpoint:** `/expenses/delete/1`
+### Edição de despesa (DELETE)
+**Endpoint:** `/expenses/1`
 
 ### Resumo Total Geral (GET)
 
-**Endpoint:** `/expense/summary/total`
+**Endpoint:** `/expenses/summary/total`
 
 **Resposta:**
 ```json
@@ -126,7 +126,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 
 ### Resumo por Categoria (GET)
 
-**Endpoint:** `/expense/summary/category`
+**Endpoint:** `/expenses/summary/category`
 
 **Resposta:**
 ```json

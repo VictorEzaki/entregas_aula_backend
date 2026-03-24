@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.post("/expense/new", (req, res) => {
+app.post("/expenses", (req, res) => {
   try {
     const { title, amount, category, date, description } = req.body;
 
@@ -55,7 +55,7 @@ app.post("/expense/new", (req, res) => {
   }
 });
 
-app.get("/expenses/list", (req, res) => {
+app.get("/expenses", (req, res) => {
   try {
     const { category } = req.query;
     let { date } = req.query;
@@ -85,7 +85,7 @@ app.get("/expenses/list", (req, res) => {
   }
 });
 
-app.get("/expense/:id", (req, res) => {
+app.get("/expenses/:id", (req, res) => {
   try {
     const { id } = req.params;
 
@@ -104,7 +104,7 @@ app.get("/expense/:id", (req, res) => {
   }
 });
 
-app.put("/expense/edit/:id", (req, res) => {
+app.put("/expenses/:id", (req, res) => {
   try {
     const { title, amount, category, date, description } = req.body;
     const { id } = req.params;
@@ -161,7 +161,7 @@ app.put("/expense/edit/:id", (req, res) => {
   }
 });
 
-app.delete("/expense/delete/:id", (req, res) => {
+app.delete("/expenses/:id", (req, res) => {
   try {
     const { id } = req.params;
 
@@ -176,7 +176,7 @@ app.delete("/expense/delete/:id", (req, res) => {
 });
 
 // Extras
-app.get("/expense/summary/total", (req, res) => {
+app.get("/expenses/summary/total", (req, res) => {
   try {
     const totalExpenses = Expense.getTotalExpenses();
 
@@ -194,7 +194,7 @@ app.get("/expense/summary/total", (req, res) => {
   }
 });
 
-app.get("/expense/summary/category", (req, res) => {
+app.get("/expenses/summary/category", (req, res) => {
   try {
     const totalExpensesByCategory = Expense.getTotalExpensesByCategory();
 
