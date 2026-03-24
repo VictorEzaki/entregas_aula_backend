@@ -61,8 +61,8 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 
 ### Listagem de despesas e seus filtros (GET)
 **Endpoint:** `/expenses`
-**Endpoint com filtro de categoria:** `/expenses/list?category=comida`
-**Endpoint com filtro de data:** `/expenses/list?date=2026-03-01`
+**Endpoint com filtro de categoria:** `/expenses?category=comida`
+**Endpoint com filtro de data:** `/expenses?date=2026-03-01`
 
 **Resposta (Exemplo):**
 ```json
