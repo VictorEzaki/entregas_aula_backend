@@ -96,7 +96,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 
 ```
 
-### Edição de despesa (DELETE)
+### Edição de despesa (PUT)
 **Endpoint:** `/expenses/1`
 
 **Payload:**
@@ -110,7 +110,7 @@ A entidade Expense representa uma movimentação financeira e possui a seguinte 
 }
 ```
 
-### Edição de despesa (DELETE)
+### Exclusão de despesa (DELETE)
 **Endpoint:** `/expenses/1`
 
 ### Resumo Total Geral (GET)
