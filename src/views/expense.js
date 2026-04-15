@@ -1,6 +1,5 @@
 // req, res
 const ExpenseController = require('../controllers/expense');
-const expense = require('../models/expense');
 
 class ExpenseView {
     getAll(req, res) {

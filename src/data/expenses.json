@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "title": "Supermercado",
-    "amount": 450.5,
-    "category": "comida",
-    "date": "2026-03-01",
-    "description": "Compras mensais",
-    "createdAt": "2026-03-01T10:00:00.000Z"
-  },
-  {
     "id": 2,
     "title": "Farmácia Central",
     "amount": 85.9,
