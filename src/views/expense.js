@@ -59,6 +59,44 @@ class ExpenseView {
             });
         }
     }
+
+    delete(req, res) {
+        try {
+            const { id } = req.params;
+
+            ExpenseController.delete(Number(id));
+
+            res.status(204).json();
+        } catch (error) {
+            res.status(400).send({
+                erro: error.message,
+            });
+        }
+    }
+
+    getTotalExpenses(req, res) {
+        try {
+            const totalExpenses = ExpenseController.getTotalExpenses();
+
+            res.status(200).json(totalExpenses);
+        } catch (error) {
+            res.status(400).json({
+                erro: error.message,
+            });
+        }
+    }
+
+    getTotalExpensesByCategory(req, res) {
+        try {
+            const totalExpensesByCategory = ExpenseController.getTotalExpensesByCategory();
+
+            res.status(200).json(totalExpensesByCategory);
+        } catch (error) {
+            res.status(400).json({
+                erro: error.message,
+            });
+        }
+    }
 }
 
 module.exports = new ExpenseView();

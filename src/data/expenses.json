@@ -27,15 +27,6 @@
     "createdAt": "2026-03-02T19:45:00.000Z"
   },
   {
-    "id": 4,
-    "title": "Aporte CDB",
-    "amount": 500,
-    "category": "investimento",
-    "date": "2026-03-02",
-    "description": "Reserva de emergência",
-    "createdAt": "2026-03-02T09:00:00.000Z"
-  },
-  {
     "id": 5,
     "title": "Conta de Luz",
     "amount": 210.15,

@@ -85,18 +85,9 @@ class ExpenseModel {
         return updatedExpense;
     }
     
-    delete(id) {
-        // ID é obrigatório para edição
-        if (!id) {
-            throw new Error('ID é obrigatório.')
-        }
-        
-        // verifica se ID é maior que zero
-        if (id < 1) {
-            throw new Error('ID não pode ser menor que 1.')
-        }
-        
+    delete(id) {        
         let expenseList = this.getAll();
+        
         const index = expenseList.findIndex(e => e.id === id);
         expenseList.splice(index, 1);
         

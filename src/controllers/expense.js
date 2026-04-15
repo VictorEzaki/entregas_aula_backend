@@ -159,6 +159,40 @@ class ExpenseController {
 
         return expenseUpdated;
     }
+
+    delete(id) {
+        // ID é obrigatório para edição
+        if (!id) {
+            throw new Error('ID é obrigatório.')
+        }
+
+        // verifica se ID é maior que zero
+        if (id < 1) {
+            throw new Error('ID não pode ser menor que 1.')
+        }
+
+        return ExpenseModel.delete(id);
+    }
+
+    getTotalExpenses() {
+        const totalExpenses = ExpenseModel.getTotalExpenses();
+
+        if (!totalExpenses) {
+            throw new Error("Nenhuma despesa cadastrada para somar.");
+        }
+
+        return totalExpenses;
+    }
+
+    getTotalExpensesByCategory() {
+        const totalExpensesByCategory = ExpenseModel.getTotalExpensesByCategory();
+
+        if (!totalExpensesByCategory) {
+            throw new Error("Nenhuma despesa cadastrada para somar.");
+        }
+
+        return totalExpensesByCategory;
+    }
 }
 
 module.exports = new ExpenseController();
