@@ -20,7 +20,7 @@
   {
     "id": 3,
     "title": "Cinema",
-    "amount": 60.0,
+    "amount": 60,
     "category": "lazer",
     "date": "2026-03-02",
     "description": "Ingresso e pipoca",
@@ -29,7 +29,7 @@
   {
     "id": 4,
     "title": "Aporte CDB",
-    "amount": 500.0,
+    "amount": 500,
     "category": "investimento",
     "date": "2026-03-02",
     "description": "Reserva de emergência",
@@ -47,7 +47,7 @@
   {
     "id": 6,
     "title": "Ifood",
-    "amount": 75.0,
+    "amount": 75,
     "category": "comida",
     "date": "2026-03-03",
     "description": "Jantar terça",
@@ -56,7 +56,7 @@
   {
     "id": 7,
     "title": "Dentista",
-    "amount": 350.0,
+    "amount": 350,
     "category": "saúde",
     "date": "2026-03-04",
     "description": "Limpeza",
@@ -74,7 +74,7 @@
   {
     "id": 9,
     "title": "Tesouro Direto",
-    "amount": 200.0,
+    "amount": 200,
     "category": "investimento",
     "date": "2026-03-05",
     "description": "Aposentadoria",
@@ -101,7 +101,7 @@
   {
     "id": 12,
     "title": "Academia",
-    "amount": 120.0,
+    "amount": 120,
     "category": "saúde",
     "date": "2026-03-06",
     "description": "Mensalidade",
@@ -110,7 +110,7 @@
   {
     "id": 13,
     "title": "Show Nacional",
-    "amount": 250.0,
+    "amount": 250,
     "category": "lazer",
     "date": "2026-03-07",
     "description": "Ingresso show",
@@ -119,7 +119,7 @@
   {
     "id": 14,
     "title": "Fundo Imobiliário",
-    "amount": 150.0,
+    "amount": 150,
     "category": "investimento",
     "date": "2026-03-07",
     "description": "Cotas HGLG11",
@@ -128,7 +128,7 @@
   {
     "id": 15,
     "title": "Condomínio",
-    "amount": 450.0,
+    "amount": 450,
     "category": "contas de casa",
     "date": "2026-03-08",
     "description": "Taxa mensal",
@@ -137,7 +137,7 @@
   {
     "id": 16,
     "title": "Restaurante Vegetariano",
-    "amount": 45.0,
+    "amount": 45,
     "category": "comida",
     "date": "2026-03-08",
     "description": "Almoço domingo",
@@ -146,7 +146,7 @@
   {
     "id": 17,
     "title": "Exame de Sangue",
-    "amount": 180.0,
+    "amount": 180,
     "category": "saúde",
     "date": "2026-03-09",
     "description": "Laboratório",
@@ -164,7 +164,7 @@
   {
     "id": 19,
     "title": "Ações PETR4",
-    "amount": 300.0,
+    "amount": 300,
     "category": "investimento",
     "date": "2026-03-10",
     "description": "Compra de ativos",
@@ -182,7 +182,7 @@
   {
     "id": 21,
     "title": "Feira Orgânica",
-    "amount": 55.0,
+    "amount": 55,
     "category": "comida",
     "date": "2026-03-11",
     "description": "Frutas e verduras",
@@ -191,7 +191,7 @@
   {
     "id": 22,
     "title": "Terapia",
-    "amount": 150.0,
+    "amount": 150,
     "category": "saúde",
     "date": "2026-03-11",
     "description": "Sessão semanal",
@@ -200,7 +200,7 @@
   {
     "id": 23,
     "title": "Aluguel de Bike",
-    "amount": 15.0,
+    "amount": 15,
     "category": "lazer",
     "date": "2026-03-12",
     "description": "Passeio parque",
@@ -209,7 +209,7 @@
   {
     "id": 24,
     "title": "ETF IVVB11",
-    "amount": 280.0,
+    "amount": 280,
     "category": "investimento",
     "date": "2026-03-12",
     "description": "Mercado americano",
@@ -218,7 +218,7 @@
   {
     "id": 25,
     "title": "Gás de Cozinha",
-    "amount": 115.0,
+    "amount": 115,
     "category": "contas de casa",
     "date": "2026-03-13",
     "description": "Botijão P13",
@@ -227,7 +227,7 @@
   {
     "id": 26,
     "title": "Churrascaria",
-    "amount": 130.0,
+    "amount": 130,
     "category": "comida",
     "date": "2026-03-13",
     "description": "Confraternização",
@@ -236,7 +236,7 @@
   {
     "id": 27,
     "title": "Multivitamínico",
-    "amount": 62.0,
+    "amount": 62,
     "category": "saúde",
     "date": "2026-03-14",
     "description": "Suplementos",
@@ -245,7 +245,7 @@
   {
     "id": 28,
     "title": "Parque Temático",
-    "amount": 180.0,
+    "amount": 180,
     "category": "lazer",
     "date": "2026-03-14",
     "description": "Day use",
@@ -254,7 +254,7 @@
   {
     "id": 29,
     "title": "Cripto BTC",
-    "amount": 100.0,
+    "amount": 100,
     "category": "investimento",
     "date": "2026-03-15",
     "description": "Fracionado Bitcoin",
@@ -263,7 +263,7 @@
   {
     "id": 30,
     "title": "Seguro Residencial",
-    "amount": 45.0,
+    "amount": 45,
     "category": "contas de casa",
     "date": "2026-03-15",
     "description": "Parcela 3/10",
@@ -281,7 +281,7 @@
   {
     "id": 32,
     "title": "Oftalmologista",
-    "amount": 200.0,
+    "amount": 200,
     "category": "saúde",
     "date": "2026-03-16",
     "description": "Consulta rotina",
@@ -299,7 +299,7 @@
   {
     "id": 34,
     "title": "LCI Imobiliário",
-    "amount": 600.0,
+    "amount": 600,
     "category": "investimento",
     "date": "2026-03-17",
     "description": "Renda fixa isenta",
@@ -308,7 +308,7 @@
   {
     "id": 35,
     "title": "IPTU",
-    "amount": 120.0,
+    "amount": 120,
     "category": "contas de casa",
     "date": "2026-03-18",
     "description": "Parcela março",
@@ -317,7 +317,7 @@
   {
     "id": 36,
     "title": "Pizzaria",
-    "amount": 88.0,
+    "amount": 88,
     "category": "comida",
     "date": "2026-03-18",
     "description": "Pizza família",
@@ -335,7 +335,7 @@
   {
     "id": 38,
     "title": "Teatro",
-    "amount": 70.0,
+    "amount": 70,
     "category": "lazer",
     "date": "2026-03-19",
     "description": "Peça comédia",
@@ -344,7 +344,7 @@
   {
     "id": 39,
     "title": "Tesouro IPCA",
-    "amount": 400.0,
+    "amount": 400,
     "category": "investimento",
     "date": "2026-03-20",
     "description": "Proteção inflação",
@@ -353,7 +353,7 @@
   {
     "id": 40,
     "title": "Manutenção Jardim",
-    "amount": 100.0,
+    "amount": 100,
     "category": "contas de casa",
     "date": "2026-03-20",
     "description": "Serviço mensal",
@@ -362,7 +362,7 @@
   {
     "id": 41,
     "title": "Açougue",
-    "amount": 140.0,
+    "amount": 140,
     "category": "comida",
     "date": "2026-03-21",
     "description": "Carnes semana",
@@ -371,7 +371,7 @@
   {
     "id": 42,
     "title": "Natação",
-    "amount": 160.0,
+    "amount": 160,
     "category": "saúde",
     "date": "2026-03-21",
     "description": "Mensalidade clube",
@@ -380,7 +380,7 @@
   {
     "id": 43,
     "title": "Boliche",
-    "amount": 55.0,
+    "amount": 55,
     "category": "lazer",
     "date": "2026-03-22",
     "description": "Diversão amigos",
@@ -389,7 +389,7 @@
   {
     "id": 44,
     "title": "Ações VALE3",
-    "amount": 350.0,
+    "amount": 350,
     "category": "investimento",
     "date": "2026-03-22",
     "description": "Renda variável",
@@ -407,7 +407,7 @@
   {
     "id": 46,
     "title": "Mercado Bairro",
-    "amount": 42.0,
+    "amount": 42,
     "category": "comida",
     "date": "2026-03-23",
     "description": "Itens básicos",
@@ -416,7 +416,7 @@
   {
     "id": 47,
     "title": "Psicólogo",
-    "amount": 150.0,
+    "amount": 150,
     "category": "saúde",
     "date": "2026-03-24",
     "description": "Sessão 2",
@@ -425,7 +425,7 @@
   {
     "id": 48,
     "title": "Kart",
-    "amount": 110.0,
+    "amount": 110,
     "category": "lazer",
     "date": "2026-03-24",
     "description": "Corrida lazer",
@@ -434,7 +434,7 @@
   {
     "id": 49,
     "title": "LCA Agronegócio",
-    "amount": 250.0,
+    "amount": 250,
     "category": "investimento",
     "date": "2026-03-25",
     "description": "Renda fixa",
@@ -452,7 +452,7 @@
   {
     "id": 51,
     "title": "Hamburgueria",
-    "amount": 62.0,
+    "amount": 62,
     "category": "comida",
     "date": "2026-03-26",
     "description": "Combo artesanal",
@@ -461,7 +461,7 @@
   {
     "id": 52,
     "title": "Protetor Solar",
-    "amount": 78.0,
+    "amount": 78,
     "category": "saúde",
     "date": "2026-03-26",
     "description": "Cuidado pele",
@@ -470,7 +470,7 @@
   {
     "id": 53,
     "title": "Museu",
-    "amount": 20.0,
+    "amount": 20,
     "category": "lazer",
     "date": "2026-03-27",
     "description": "Exposição arte",
@@ -479,7 +479,7 @@
   {
     "id": 54,
     "title": "Cripto ETH",
-    "amount": 150.0,
+    "amount": 150,
     "category": "investimento",
     "date": "2026-03-27",
     "description": "Ethereum",
@@ -488,7 +488,7 @@
   {
     "id": 55,
     "title": "Diarista",
-    "amount": 200.0,
+    "amount": 200,
     "category": "contas de casa",
     "date": "2026-03-28",
     "description": "Limpeza geral",
@@ -497,7 +497,7 @@
   {
     "id": 56,
     "title": "Sacolão",
-    "amount": 38.0,
+    "amount": 38,
     "category": "comida",
     "date": "2026-03-28",
     "description": "Verduras frescas",
@@ -506,7 +506,7 @@
   {
     "id": 57,
     "title": "Massagem Relax",
-    "amount": 120.0,
+    "amount": 120,
     "category": "saúde",
     "date": "2026-03-29",
     "description": "Bem-estar",
@@ -515,7 +515,7 @@
   {
     "id": 58,
     "title": "Aluguel Quadra",
-    "amount": 40.0,
+    "amount": 40,
     "category": "lazer",
     "date": "2026-03-29",
     "description": "Futebol amigos",
@@ -524,7 +524,7 @@
   {
     "id": 59,
     "title": "Tesouro Selic",
-    "amount": 300.0,
+    "amount": 300,
     "category": "investimento",
     "date": "2026-03-30",
     "description": "Liquidez diária",
@@ -533,7 +533,7 @@
   {
     "id": 60,
     "title": "Material Limpeza",
-    "amount": 85.0,
+    "amount": 85,
     "category": "contas de casa",
     "date": "2026-03-30",
     "description": "Abastecimento",
@@ -542,7 +542,7 @@
   {
     "id": 61,
     "title": "Peixaria",
-    "amount": 95.0,
+    "amount": 95,
     "category": "comida",
     "date": "2026-03-31",
     "description": "Almoço especial",
@@ -551,7 +551,7 @@
   {
     "id": 62,
     "title": "Colírio",
-    "amount": 25.0,
+    "amount": 25,
     "category": "saúde",
     "date": "2026-03-31",
     "description": "Farmácia",
@@ -560,7 +560,7 @@
   {
     "id": 63,
     "title": "Games Steam",
-    "amount": 35.0,
+    "amount": 35,
     "category": "lazer",
     "date": "2026-03-01",
     "description": "Promoção",
@@ -569,7 +569,7 @@
   {
     "id": 64,
     "title": "COE Tech",
-    "amount": 1000.0,
+    "amount": 1000,
     "category": "investimento",
     "date": "2026-03-02",
     "description": "Investimento estruturado",
@@ -578,7 +578,7 @@
   {
     "id": 65,
     "title": "Conserto Torneira",
-    "amount": 45.0,
+    "amount": 45,
     "category": "contas de casa",
     "date": "2026-03-03",
     "description": "Reparo cozinha",
@@ -587,7 +587,7 @@
   {
     "id": 66,
     "title": "Sorveteria",
-    "amount": 22.0,
+    "amount": 22,
     "category": "comida",
     "date": "2026-03-04",
     "description": "Sobremesa",
@@ -596,7 +596,7 @@
   {
     "id": 67,
     "title": "Suplemento Whey",
-    "amount": 140.0,
+    "amount": 140,
     "category": "saúde",
     "date": "2026-03-05",
     "description": "Proteína",
@@ -605,7 +605,7 @@
   {
     "id": 68,
     "title": "Passeio Turístico",
-    "amount": 75.0,
+    "amount": 75,
     "category": "lazer",
     "date": "2026-03-06",
     "description": "Guia local",
@@ -614,7 +614,7 @@
   {
     "id": 69,
     "title": "Previdência Privada",
-    "amount": 250.0,
+    "amount": 250,
     "category": "investimento",
     "date": "2026-03-07",
     "description": "PGBL",
@@ -623,7 +623,7 @@
   {
     "id": 70,
     "title": "Lâmpadas LED",
-    "amount": 60.0,
+    "amount": 60,
     "category": "contas de casa",
     "date": "2026-03-08",
     "description": "Troca iluminação",
@@ -632,7 +632,7 @@
   {
     "id": 71,
     "title": "Sushi delivery",
-    "amount": 110.0,
+    "amount": 110,
     "category": "comida",
     "date": "2026-03-09",
     "description": "Jantar especial",
@@ -641,7 +641,7 @@
   {
     "id": 72,
     "title": "Yoga",
-    "amount": 130.0,
+    "amount": 130,
     "category": "saúde",
     "date": "2026-03-10",
     "description": "Mensalidade",
@@ -650,7 +650,7 @@
   {
     "id": 73,
     "title": "HQ Colecionador",
-    "amount": 45.0,
+    "amount": 45,
     "category": "lazer",
     "date": "2026-03-11",
     "description": "Quadrinhos",
@@ -659,7 +659,7 @@
   {
     "id": 74,
     "title": "Fundo Cambial",
-    "amount": 200.0,
+    "amount": 200,
     "category": "investimento",
     "date": "2026-03-12",
     "description": "Exposição dólar",
@@ -668,7 +668,7 @@
   {
     "id": 75,
     "title": "Seguro de Vida",
-    "amount": 35.0,
+    "amount": 35,
     "category": "contas de casa",
     "date": "2026-03-13",
     "description": "Proteção",
@@ -677,7 +677,7 @@
   {
     "id": 76,
     "title": "Pastelaria",
-    "amount": 28.0,
+    "amount": 28,
     "category": "comida",
     "date": "2026-03-14",
     "description": "Lanche feira",
@@ -686,7 +686,7 @@
   {
     "id": 77,
     "title": "Kits Primeiros Socorros",
-    "amount": 45.0,
+    "amount": 45,
     "category": "saúde",
     "date": "2026-03-15",
     "description": "Doméstico",
@@ -695,7 +695,7 @@
   {
     "id": 78,
     "title": "Aluguel Patins",
-    "amount": 25.0,
+    "amount": 25,
     "category": "lazer",
     "date": "2026-03-16",
     "description": "Parque beira-mar",
@@ -704,7 +704,7 @@
   {
     "id": 79,
     "title": "Ações ITUB4",
-    "amount": 450.0,
+    "amount": 450,
     "category": "investimento",
     "date": "2026-03-17",
     "description": "Setor bancário",
@@ -713,7 +713,7 @@
   {
     "id": 80,
     "title": "Filtro de Água",
-    "amount": 80.0,
+    "amount": 80,
     "category": "contas de casa",
     "date": "2026-03-18",
     "description": "Troca refil",
@@ -722,7 +722,7 @@
   {
     "id": 81,
     "title": "Tapiocaria",
-    "amount": 15.0,
+    "amount": 15,
     "category": "comida",
     "date": "2026-03-19",
     "description": "Lanche rápido",
@@ -731,7 +731,7 @@
   {
     "id": 82,
     "title": "Check-up Cardio",
-    "amount": 300.0,
+    "amount": 300,
     "category": "saúde",
     "date": "2026-03-20",
     "description": "Eletrocardiograma",
@@ -740,7 +740,7 @@
   {
     "id": 83,
     "title": "Paintball",
-    "amount": 90.0,
+    "amount": 90,
     "category": "lazer",
     "date": "2026-03-21",
     "description": "Evento empresa",
@@ -749,7 +749,7 @@
   {
     "id": 84,
     "title": "Debêntures Vale",
-    "amount": 500.0,
+    "amount": 500,
     "category": "investimento",
     "date": "2026-03-22",
     "description": "Crédito privado",
@@ -758,7 +758,7 @@
   {
     "id": 85,
     "title": "Ração Pet",
-    "amount": 180.0,
+    "amount": 180,
     "category": "contas de casa",
     "date": "2026-03-23",
     "description": "Alimentação pet",
@@ -767,7 +767,7 @@
   {
     "id": 86,
     "title": "Mercado Gourmet",
-    "amount": 120.0,
+    "amount": 120,
     "category": "comida",
     "date": "2026-03-24",
     "description": "Queijos e vinhos",
@@ -776,7 +776,7 @@
   {
     "id": 87,
     "title": "Aparelho Dental",
-    "amount": 150.0,
+    "amount": 150,
     "category": "saúde",
     "date": "2026-03-25",
     "description": "Manutenção",
@@ -785,7 +785,7 @@
   {
     "id": 88,
     "title": "Passeio de Barco",
-    "amount": 200.0,
+    "amount": 200,
     "category": "lazer",
     "date": "2026-03-26",
     "description": "Ilha",
@@ -794,7 +794,7 @@
   {
     "id": 89,
     "title": "Tesouro Pré-fixado",
-    "amount": 250.0,
+    "amount": 250,
     "category": "investimento",
     "date": "2026-03-27",
     "description": "Alocação 2029",
@@ -803,7 +803,7 @@
   {
     "id": 90,
     "title": "Pintura Parede",
-    "amount": 130.0,
+    "amount": 130,
     "category": "contas de casa",
     "date": "2026-03-28",
     "description": "Material retoque",
@@ -812,7 +812,7 @@
   {
     "id": 91,
     "title": "Food Truck",
-    "amount": 35.0,
+    "amount": 35,
     "category": "comida",
     "date": "2026-03-29",
     "description": "Festival",
@@ -821,7 +821,7 @@
   {
     "id": 92,
     "title": "Vacina Gripe",
-    "amount": 90.0,
+    "amount": 90,
     "category": "saúde",
     "date": "2026-03-30",
     "description": "Imunização",
@@ -830,7 +830,7 @@
   {
     "id": 93,
     "title": "Workshop Fotografia",
-    "amount": 150.0,
+    "amount": 150,
     "category": "lazer",
     "date": "2026-03-31",
     "description": "Hobbies",
@@ -839,7 +839,7 @@
   {
     "id": 94,
     "title": "Fundo de Ações",
-    "amount": 300.0,
+    "amount": 300,
     "category": "investimento",
     "date": "2026-03-01",
     "description": "Gestão ativa",
@@ -848,7 +848,7 @@
   {
     "id": 95,
     "title": "Produtos Limpeza",
-    "amount": 42.0,
+    "amount": 42,
     "category": "contas de casa",
     "date": "2026-03-02",
     "description": "Reposição",
@@ -857,7 +857,7 @@
   {
     "id": 96,
     "title": "Churrasco em Casa",
-    "amount": 160.0,
+    "amount": 160,
     "category": "comida",
     "date": "2026-03-03",
     "description": "Carnes e carvão",
@@ -866,7 +866,7 @@
   {
     "id": 97,
     "title": "Óculos de Sol",
-    "amount": 400.0,
+    "amount": 400,
     "category": "saúde",
     "date": "2026-03-04",
     "description": "Proteção UV",
@@ -875,7 +875,7 @@
   {
     "id": 98,
     "title": "Viagem Fim de Semana",
-    "amount": 1200.0,
+    "amount": 1200,
     "category": "lazer",
     "date": "2026-03-05",
     "description": "Hospedagem",
@@ -884,7 +884,7 @@
   {
     "id": 99,
     "title": "Cripto SOL",
-    "amount": 80.0,
+    "amount": 80,
     "category": "investimento",
     "date": "2026-03-06",
     "description": "Solana",
@@ -893,10 +893,28 @@
   {
     "id": 100,
     "title": "IPTU Cota Única",
-    "amount": 850.0,
+    "amount": 850,
     "category": "contas de casa",
     "date": "2026-03-07",
     "description": "Pagamento total",
     "createdAt": "2026-03-07T09:00:00.000Z"
+  },
+  {
+    "id": 101,
+    "title": "Netflix",
+    "amount": 50.2,
+    "category": "Assinatura",
+    "date": "2026-03-20",
+    "description": "Assinatura da netflix",
+    "createdAt": "2026-04-15T00:09:32.809Z"
+  },
+  {
+    "id": 102,
+    "title": "Netflix",
+    "amount": 50.2,
+    "category": "Assinatura",
+    "date": "2026-03-20",
+    "description": "Assinatura da netflix",
+    "createdAt": "2026-04-15T00:16:42.930Z"
   }
 ]

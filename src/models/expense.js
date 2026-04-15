@@ -1,7 +1,7 @@
 const pathData = './src/data/expenses.json';
 const fs = require('fs');
 
-class Expense {
+class ExpenseModel {
     constructor() {
         this.idCounter = 1;
         this.init();
@@ -33,41 +33,12 @@ class Expense {
     }
     
     getById(id) {
-        if (!id) {
-            throw new Error('ID não informado.');
-        }
-        
-        if (id < 1) {
-            throw new Error('ID não pode ser menor que 1.');
-        }
-        
         let expenses = this.getAll();
         
         return expenses.find(e => e.id === id);
     }
     
-    create(title, amount, category, date, description) {        
-        // validações da regra de negócio
-        // O campo title é obrigatório
-        if (!title) {
-            throw new Error('Título de despesa é um campo obrigatório.')
-        }
-        
-        // * O campo amount deve ser maior que zero
-        if (amount !== undefined && amount < 0) {
-            throw new Error('Valor da despesa não pode ser menor que zero.')
-        }
-        
-        // * O campo date não pode ser no futuro
-        if (date) {
-            const dateAtual     = new Date().toISOString().split('T')[0];
-            const dateDespesa   = new Date(date).toISOString().split('T')[0];
-            
-            if (dateDespesa > dateAtual) {
-                throw new Error('A data da despesa não pode ser maior que atual.');
-            }
-        }
-        
+    create(title, amount, category, date, description) {
         const newExpense = {
             id: this.idCounter++,
             title,
@@ -93,37 +64,6 @@ class Expense {
     }
     
     update(title, amount, category, date, description, id) {
-        // validações da regra de negócio
-        // ID é obrigatório para edição
-        if (!id) {
-            throw new Error('ID é obrigatório.')
-        }
-        
-        // verifica se ID é maior que zero
-        if (id < 1) {
-            throw new Error('ID não pode ser menor que 1.')
-        }
-        
-        // O campo title é obrigatório
-        if (!title) {
-            throw new Error('Título de despesa é um campo obrigatório.')
-        }
-        
-        // * O campo amount deve ser maior que zero
-        if (amount !== undefined && amount < 0) {
-            throw new Error('Valor da despesa não pode ser menor que zero.')
-        }
-        
-        // * O campo date não pode ser no futuro
-        if (date) {
-            const dateAtual     = new Date().toISOString().split('T')[0];
-            const dateDespesa   = new Date(date).toISOString().split('T')[0];
-            
-            if (dateDespesa > dateAtual) {
-                throw new Error('A data da despesa não pode ser maior que atual.');
-            }
-        }
-        
         let expenseList = this.getAll();
         const index = expenseList.findIndex(e => e.id === id);
         const updatedExpense = {
@@ -198,4 +138,4 @@ class Expense {
     }
 }
 
-module.exports = new Expense();
+module.exports = new ExpenseModel();
