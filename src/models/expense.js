@@ -90,7 +90,6 @@ class ExpenseModel {
         let expenseList = this.getAll();
 
         const index = expenseList.findIndex(e => e.id === id);
-        console.log(index);
         expenseList.splice(index, 1);
 
         if (fs.existsSync(pathData)) {
