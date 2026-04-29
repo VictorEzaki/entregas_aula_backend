@@ -1,4 +1,5 @@
 // validações e regra de negócio
+const { HttpError } = require('../errors/HttpError');
 const expense = require('../models/expense');
 const ExpenseModel = require('../models/expense');
 
@@ -35,7 +36,7 @@ class ExpenseController {
         const expense = ExpenseModel.getById(id);
 
         if (!expense) {
-            throw new Error('Despesa não encontrada');
+            throw new HttpError(404, 'Despesa não encontrada');
         }
 
         return expense;

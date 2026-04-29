@@ -1,5 +1,6 @@
 // req, res
 const ExpenseController = require('../controllers/expense');
+const { HttpError } = require('../errors/HttpError');
 
 class ExpenseView {
     getAll(req, res) {
@@ -16,7 +17,7 @@ class ExpenseView {
         }
     }
 
-    getById(req, res) {
+    getById(req, res, next) {
         try {
             const { id } = req.params;
 
@@ -24,9 +25,7 @@ class ExpenseView {
 
             res.status(200).json(expense);
         } catch (error) {
-            res.status(400).json({
-                erro: error.message,
-            });
+            next(error);
         }
     }
 
