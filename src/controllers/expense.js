@@ -14,7 +14,9 @@ class ExpenseController {
 
         const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
         if (date !== undefined && !dateRegex.test(date)) {
-            throw new Error('Formato de data inválido. Use YYYY-MM-DD.');
+            const error = new Error('Formato de data inválido. Use YYYY-MM-DD.');
+            error.status = 400;
+            throw error;
         }
         if (date) {
             expenses = expenses.filter((expense) => expense.date === date);
@@ -50,48 +52,64 @@ class ExpenseController {
         // validações da regra de negócio
         // O campo title é obrigatório
         if (!title) {
-            throw new Error('Título de despesa é um campo obrigatório.');
+            const error = new Error('Título de despesa é um campo obrigatório.');
+            error.status = 400;
+            throw error;
         }
         // * O campo amount deve ser maior que zero
         if (amount !== undefined && amount < 0) {
-            throw new Error('Valor da despesa não pode ser menor que zero.');
+            const error = new Error('Valor da despesa não pode ser menor que zero.');
+            error.status = 400;
+            throw error;
         }
-
+        
         // * O campo date não pode ser no futuro
         if (date) {
             const dateAtual = new Date().toISOString().split('T')[0];
             const dateDespesa = new Date(date).toISOString().split('T')[0];
-
+            
             if (dateDespesa > dateAtual) {
-                throw new Error('A data da despesa não pode ser maior que atual.');
+                const error = new Error('A data da despesa não pode ser maior que atual.');
+                error.status = 400;
+                throw error;
             }
         }
-
+        
         // Validações extras para tratamento
         // verifica se o title foi enviado ou se está com o tipo correto
         if (title !== undefined && typeof title !== "string") {
-            throw new Error("Título de despesa inválido.")
+            const error = new Error("Título de despesa inválido.")
+            error.status = 400;
+            throw error;
         }
-
+        
         // verifica se amount é number caso tenha sido enviado
         if (amount !== undefined && typeof amount !== "number") {
-            throw new Error("Valor de despesa inválido.");
+            const error = new Error("Valor de despesa inválido.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se categoria foi enviado no tipo correto
         if (category !== undefined && typeof category !== "string") {
-            throw new Error("Categoria inválida.");
+            const error = new Error("Categoria inválida.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se foi enviado com o tipo correto(string)
         if (description !== undefined && typeof description !== "string") {
-            throw new Error("Descrição de despesa ausente ou inválido.");
+            const error = new Error("Descrição de despesa ausente ou inválido.");
+            error.status = 400;
+            throw error;
         }
 
         const expenseCreated = ExpenseModel.create(title, amount, category, date, description)
 
         if (!expenseCreated) {
-            throw new Error('Erro ao criar despesa');
+            const error = new Error('Erro ao criar despesa');
+            error.status = 500;
+            throw error;
         }
 
         return expenseCreated;
@@ -101,22 +119,30 @@ class ExpenseController {
         // validações da regra de negócio
         // ID é obrigatório para edição
         if (!id) {
-            throw new Error('ID é obrigatório.')
+            const error = new Error('ID é obrigatório.')
+            error.status = 400;
+            throw error;
         }
 
         // verifica se ID é maior que zero
         if (id < 1) {
-            throw new Error('ID não pode ser menor que 1.')
+            const error = new Error('ID não pode ser menor que 1.')
+            error.status = 400;
+            throw error;
         }
 
         // O campo title é obrigatório
         if (!title) {
-            throw new Error('Título de despesa é um campo obrigatório.')
+            const error = new Error('Título de despesa é um campo obrigatório.')
+            error.status = 400;
+            throw error;
         }
 
         // * O campo amount deve ser maior que zero
         if (amount !== undefined && amount < 0) {
-            throw new Error('Valor da despesa não pode ser menor que zero.')
+            const error = new Error('Valor da despesa não pode ser menor que zero.')
+            error.status = 400;
+            throw error;
         }
 
         // * O campo date não pode ser no futuro
@@ -125,41 +151,63 @@ class ExpenseController {
             const dateDespesa = new Date(date).toISOString().split('T')[0];
 
             if (dateDespesa > dateAtual) {
-                throw new Error('A data da despesa não pode ser maior que atual.');
+                const error = new Error('A data da despesa não pode ser maior que atual.');
+                error.status = 400;
+                throw error;
             }
         }
 
         // validações extras para tratamento
         // verifica se o title foi enviado ou se está com o tipo correto
         if (title !== undefined && typeof title !== "string") {
-            throw new Error("Título de despesa inválido.");
+            const error = new Error("Título de despesa inválido.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se amount é number caso tenha sido enviado
         if (amount !== undefined && typeof amount !== "number") {
-            throw new Error("Valor de despesa inválido.");
+            const error = new Error("Valor de despesa inválido.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se categoria foi enviado no tipo correto
         if (category !== undefined && typeof category !== "string") {
-            throw new Error("Categoria inválida.");
+            const error = new Error("Categoria inválida.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se é uma data válida quando enviada
         const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
         if (date !== undefined && !dateRegex.test(date)) {
-            throw new Error("Formato de data inválido. Use YYYY-MM-DD.");
+            const error = new Error("Formato de data inválido. Use YYYY-MM-DD.");
+            error.status = 400;
+            throw error;
         }
 
         // verifica se foi enviado com o tipo correto(string)
         if (description !== undefined && typeof description !== "string") {
-            throw new Error("Descrição de despesa ausente ou inválido.");
+            const error = new Error("Descrição de despesa ausente ou inválido.");
+            error.status = 400;
+            throw error;
         }
 
+        console.log(id);
+        const expense = ExpenseModel.getById(id);
+        console.log(expense);
+        if (!expense) {
+            const error = new Error('Despesa não encontrada.');
+            error.status = 404;
+            throw error;
+        }
+        
         const expenseUpdated = ExpenseModel.update(title, amount, category, date, description, id);
-
         if (!expenseUpdated) {
-            throw new Error('Ocorreu um erro ao editar a despesa!');
+            const error = new Error('Ocorreu um erro ao editar a despesa!');
+            error.status = 500;
+            throw error;
         }
 
         return expenseUpdated;

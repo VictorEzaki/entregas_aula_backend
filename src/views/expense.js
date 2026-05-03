@@ -10,7 +10,7 @@ class ExpenseView {
 
             res.status(200).json(expenses);
         } catch (error) {
-            res.status(400).json({
+            res.status(error.status).json({
                 erro: error.message,
             });
         }
@@ -36,7 +36,7 @@ class ExpenseView {
 
             res.status(201).json(expense);
         } catch (error) {
-            res.status(400).json({
+            res.status(error.status).json({
                 erro: error.message,
             });
         }
@@ -51,7 +51,7 @@ class ExpenseView {
 
             res.status(200).json(expense);
         } catch (error) {
-            res.status(400).send({
+            res.status(error.status).send({
                 erro: error.message,
             });
         }
