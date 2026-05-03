@@ -1,6 +1,5 @@
 // req, res
 const ExpenseController = require('../controllers/expense');
-const { HttpError } = require('../errors/HttpError');
 
 class ExpenseView {
     getAll(req, res) {
@@ -25,7 +24,7 @@ class ExpenseView {
 
             res.status(200).json(expense);
         } catch (error) {
-            next(error);
+            res.status(error.status).json({ message: error.message });
         }
     }
 

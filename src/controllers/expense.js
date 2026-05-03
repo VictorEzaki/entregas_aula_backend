@@ -1,5 +1,4 @@
 // validações e regra de negócio
-const { HttpError } = require('../errors/HttpError');
 const expense = require('../models/expense');
 const ExpenseModel = require('../models/expense');
 
@@ -26,17 +25,22 @@ class ExpenseController {
 
     getById(id) {
         if (!id) {
-            throw new Error('ID não informado.');
+            const error = new Error('ID não informado.');
+            error.status = 400;
+            throw error;
         }
-
+        
         if (id < 1) {
-            throw new Error('ID não pode ser menor que 1.');
+            const error = new Error('ID não pode ser menor que 1.');
+            error.status = 400;
+            throw error;
         }
-
-        const expense = ExpenseModel.getById(id);
-
+        
+        const expense = ExpenseModel.getById(id); 
         if (!expense) {
-            throw new HttpError(404, 'Despesa não encontrada');
+            const error = new Error('Despesa não encontrada.');
+            error.status = 404;
+            throw error;
         }
 
         return expense;
