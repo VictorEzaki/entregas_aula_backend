@@ -23,7 +23,7 @@ npm install
 ```
 2. Inicie o servidor:
 ```bash
-node ./src/app.js
+npm run dev
 ```
 
 
