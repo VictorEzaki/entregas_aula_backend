@@ -194,16 +194,14 @@ class ExpenseController {
             throw error;
         }
 
-        console.log(id);
-        const expense = ExpenseModel.getById(id);
-        console.log(expense);
+        const expense = ExpenseModel.getById(Number(id));
         if (!expense) {
             const error = new Error('Despesa não encontrada.');
             error.status = 404;
             throw error;
         }
         
-        const expenseUpdated = ExpenseModel.update(title, amount, category, date, description, id);
+        const expenseUpdated = ExpenseModel.update(title, amount, category, date, description, Number(id));
         if (!expenseUpdated) {
             const error = new Error('Ocorreu um erro ao editar a despesa!');
             error.status = 500;
@@ -224,7 +222,14 @@ class ExpenseController {
             throw new Error('ID não pode ser menor que 1.')
         }
 
-        return ExpenseModel.delete(id);
+        const expense = ExpenseModel.getById(Number(id));
+        if (!expense) {
+            const error = new Error('Despesa não encontrada.');
+            error.status = 404;
+            throw error;
+        }
+
+        return ExpenseModel.delete(Number(id));
     }
 
     getTotalExpenses() {

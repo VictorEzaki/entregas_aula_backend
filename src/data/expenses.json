@@ -1,23 +1,5 @@
 [
   {
-    "id": 2,
-    "title": "Farmácia Central",
-    "amount": 85.9,
-    "category": "saúde",
-    "date": "2026-03-01",
-    "description": "Vitaminas",
-    "createdAt": "2026-03-01T11:20:00.000Z"
-  },
-  {
-    "id": 3,
-    "title": "Cinema",
-    "amount": 60,
-    "category": "lazer",
-    "date": "2026-03-02",
-    "description": "Ingresso e pipoca",
-    "createdAt": "2026-03-02T19:45:00.000Z"
-  },
-  {
     "id": 5,
     "title": "Conta de Luz",
     "amount": 210.15,
