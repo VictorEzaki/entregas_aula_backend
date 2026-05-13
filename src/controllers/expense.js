@@ -1,10 +1,11 @@
 // validações e regra de negócio
+const { where } = require('sequelize');
 const expense = require('../models/expense');
 const ExpenseModel = require('../models/expense');
 
 class ExpenseController {
-    getAll(category, date) {
-        let expenses = ExpenseModel.getAll();
+    async getAll(category, date) {
+        let expenses = await ExpenseModel.getAll();
 
         if (category) {
             expenses = expenses.filter(
@@ -25,7 +26,7 @@ class ExpenseController {
         return expenses;
     }
 
-    getById(id) {
+    async getById(id) {
         if (!id) {
             const error = new Error('ID não informado.');
             error.status = 400;
@@ -38,7 +39,7 @@ class ExpenseController {
             throw error;
         }
         
-        const expense = ExpenseModel.getById(id); 
+        const expense = await ExpenseModel.getById(id); 
         if (!expense) {
             const error = new Error('Despesa não encontrada.');
             error.status = 404;
@@ -48,7 +49,7 @@ class ExpenseController {
         return expense;
     }
 
-    create(title, amount, category, date, description) {
+    async create(title, amount, category, date, description) {
         // validações da regra de negócio
         // O campo title é obrigatório
         if (!title) {
@@ -104,7 +105,7 @@ class ExpenseController {
             throw error;
         }
 
-        const expenseCreated = ExpenseModel.create(title, amount, category, date, description)
+        const expenseCreated = await ExpenseModel.create(title, amount, category, date, description)
 
         if (!expenseCreated) {
             const error = new Error('Erro ao criar despesa');
@@ -115,7 +116,7 @@ class ExpenseController {
         return expenseCreated;
     }
 
-    update(title, amount, category, date, description, id) {
+    async update(title, amount, category, date, description, id) {
         // validações da regra de negócio
         // ID é obrigatório para edição
         if (!id) {
@@ -194,14 +195,14 @@ class ExpenseController {
             throw error;
         }
 
-        const expense = ExpenseModel.getById(Number(id));
+        const expense = await ExpenseModel.getById(id);
         if (!expense) {
             const error = new Error('Despesa não encontrada.');
             error.status = 404;
             throw error;
         }
         
-        const expenseUpdated = ExpenseModel.update(title, amount, category, date, description, Number(id));
+        const expenseUpdated = await ExpenseModel.update(title, amount, category, date, description, id);
         if (!expenseUpdated) {
             const error = new Error('Ocorreu um erro ao editar a despesa!');
             error.status = 500;
@@ -211,7 +212,7 @@ class ExpenseController {
         return expenseUpdated;
     }
 
-    delete(id) {
+    async delete(id) {
         // ID é obrigatório para edição
         if (!id) {
             throw new Error('ID é obrigatório.')
@@ -222,7 +223,7 @@ class ExpenseController {
             throw new Error('ID não pode ser menor que 1.')
         }
 
-        const expense = ExpenseModel.getById(Number(id));
+        const expense = await ExpenseModel.getById(Number(id));
         if (!expense) {
             const error = new Error('Despesa não encontrada.');
             error.status = 404;

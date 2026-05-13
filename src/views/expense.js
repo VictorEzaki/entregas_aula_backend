@@ -2,11 +2,11 @@
 const ExpenseController = require('../controllers/expense');
 
 class ExpenseView {
-    getAll(req, res) {
+    async getAll(req, res) {
         try {
             let { category, date } = req.query;
 
-            const expenses = ExpenseController.getAll(category, date);
+            const expenses = await ExpenseController.getAll(category, date);
 
             res.status(200).json(expenses);
         } catch (error) {
@@ -16,11 +16,11 @@ class ExpenseView {
         }
     }
 
-    getById(req, res, next) {
+    async getById(req, res) {
         try {
             const { id } = req.params;
 
-            const expense = ExpenseController.getById(Number(id));
+            const expense = await ExpenseController.getById(Number(id));
 
             res.status(200).json(expense);
         } catch (error) {
@@ -28,11 +28,11 @@ class ExpenseView {
         }
     }
 
-    create(req, res) {
+    async create(req, res) {
         try {
             const { title, amount, category, date, description } = req.body;
 
-            const expense = ExpenseController.create(title, amount, category, date, description);
+            const expense = await ExpenseController.create(title, amount, category, date, description);
 
             res.status(201).json(expense);
         } catch (error) {
@@ -42,36 +42,36 @@ class ExpenseView {
         }
     }
 
-    update(req, res) {
+    async update(req, res) {
         try {
             const { title, amount, category, date, description } = req.body;
             const { id } = req.params;
 
-            const expense = ExpenseController.update(title, amount, category, date, description, id);
+            const expense = await ExpenseController.update(title, amount, category, date, description, Number(id));
 
             res.status(200).json(expense);
         } catch (error) {
-            res.status(error.status).send({
+            res.status(error.status).json({
                 erro: error.message,
             });
         }
     }
 
-    delete(req, res) {
+    async delete(req, res) {
         try {
             const { id } = req.params;
 
-            ExpenseController.delete(Number(id));
+            await ExpenseController.delete(Number(id));
 
             res.status(204).json();
         } catch (error) {
-            res.status(400).send({
+            res.status(400).json({
                 erro: error.message,
             });
         }
     }
 
-    getTotalExpenses(req, res) {
+    async getTotalExpenses(req, res) {
         try {
             const totalExpenses = ExpenseController.getTotalExpenses();
 
@@ -83,7 +83,7 @@ class ExpenseView {
         }
     }
 
-    getTotalExpensesByCategory(req, res) {
+    async getTotalExpensesByCategory(req, res) {
         try {
             const totalExpensesByCategory = ExpenseController.getTotalExpensesByCategory();
 
