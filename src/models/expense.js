@@ -33,21 +33,32 @@ const db = sequelize.define('expenses', {
 
 class Expense {
     constructor() {}
-
+    
     async getAll() {
         return db.findAll();
     }
-
+    
     async getById(id) {
-        return db.findOne({ where: id });
+        return db.findOne({
+            where: { id }
+        });
     }
-
+    
     async create(title, amount, category, date, description) {
         return db.create({title, amount, category, date, description})
     }
-
+    
     async update(title, amount, category, date, description, id) {
-        return db.update({title, amount, category, date, description}, { where: id })
+        return db.update(
+            { title, amount, category, date, description },
+            { where: { id } }
+        );
+    }
+    
+    async delete(id) {
+        return db.destroy({
+            where: { id }
+        });
     }
 }
 

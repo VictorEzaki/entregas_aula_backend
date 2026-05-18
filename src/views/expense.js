@@ -73,7 +73,7 @@ class ExpenseView {
 
     async getTotalExpenses(req, res) {
         try {
-            const totalExpenses = ExpenseController.getTotalExpenses();
+            const totalExpenses = await ExpenseController.getTotalExpenses();
 
             res.status(200).json(totalExpenses);
         } catch (error) {
@@ -85,7 +85,7 @@ class ExpenseView {
 
     async getTotalExpensesByCategory(req, res) {
         try {
-            const totalExpensesByCategory = ExpenseController.getTotalExpensesByCategory();
+            const totalExpensesByCategory = await ExpenseController.getTotalExpensesByCategory();
 
             res.status(200).json(totalExpensesByCategory);
         } catch (error) {
