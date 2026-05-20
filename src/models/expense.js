@@ -1,5 +1,6 @@
-const { DataTypes, where } = require('sequelize'); 
-const sequelize = require('./../database.js');
+const { sequelize } = require('./../database.js');
+const { DataTypes } = require('sequelize'); 
+const categoryModel = require('./category.js');
 
 const db = sequelize.define('expenses', {
     id: {
@@ -15,9 +16,15 @@ const db = sequelize.define('expenses', {
         type: DataTypes.DOUBLE,
         allowNull: false
     },
-    category: {
-        type: DataTypes.STRING,
-        allowNull: true
+    categoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+            model: 'categories',
+            key: 'id'
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE'
     },
     date: {
         type: DataTypes.DATEONLY,
@@ -31,7 +38,7 @@ const db = sequelize.define('expenses', {
     updatedAt: false
 });
 
-class Expense {
+class ExpenseModel {
     constructor() {}
     
     async getAll() {
@@ -62,4 +69,7 @@ class Expense {
     }
 }
 
-module.exports = new Expense();
+const expenseModel = new ExpenseModel();
+expenseModel.Expense = Expense;
+
+module.exports = expenseModel;
