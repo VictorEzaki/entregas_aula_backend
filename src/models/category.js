@@ -46,7 +46,7 @@ class CategoryModel {
     }
 }
 
-const categoryModel = new CategoryModel();
-categoryModel.Category = Category;
+// const categoryModel = new CategoryModel();
+// categoryModel.Category = Category;
 
-module.exports = categoryModel;
+// module.exports = categoryModel;

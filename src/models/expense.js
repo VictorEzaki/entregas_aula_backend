@@ -69,7 +69,4 @@ class ExpenseModel {
     }
 }
 
-const expenseModel = new ExpenseModel();
-expenseModel.Expense = Expense;
-
-module.exports = expenseModel;
+module.exports = new ExpenseModel();
