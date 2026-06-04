@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize'); 
-const { sequelize } = require('../database.js');
+const sequelize = require('./database.js');
 
 const db = sequelize.define('categories', {
     id: {
@@ -46,7 +46,7 @@ class CategoryModel {
     }
 }
 
-// const categoryModel = new CategoryModel();
-// categoryModel.Category = Category;
+const categoryModel = new CategoryModel();
+categoryModel.Category = db;
 
-// module.exports = categoryModel;
+module.exports = categoryModel;

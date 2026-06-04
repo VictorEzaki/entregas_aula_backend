@@ -207,22 +207,20 @@ class ExpenseController {
             throw error;
         }
         
-        return expenseUpdated;
+        return {
+            message: 'Despesa atualizada com sucesso.'
+        };
     }
     
     async delete(id) {
         // ID é obrigatório para edição
         if (!id) {
-            const error = new Error('ID é obrigatório.');
-            error.status = 400;
-            throw error;
+            throw new Error('ID é obrigatório.')
         }
         
         // verifica se ID é maior que zero
         if (id < 1) {
-            const error = new Error('ID não pode ser menor que 1.');
-            error.status = 400;
-            throw error;
+            throw new Error('ID não pode ser menor que 1.')
         }
         
         const expense = await ExpenseModel.getById(Number(id));
@@ -233,36 +231,6 @@ class ExpenseController {
         }
         
         return ExpenseModel.delete(Number(id));
-    }
-    
-    async getTotalExpenses() {
-        const expenses = await this.getAll();
-        
-        const totalExpense = expenses.reduce((acc, expense) => {
-            return acc + (Number(expense.amount) || 0);
-        }, 0);
-        
-        return {
-            total: totalExpense
-        };
-    }
-    
-    async getTotalExpensesByCategory() {
-        const expenses = await this.getAll();
-        
-        const totals = expenses.reduce((acc, expense) => {
-            const category = expense.category || "Sem Categoria";
-            const amount = Number(expense.amount) || 0;
-            
-            if (!acc[category]) {
-                acc[category] = 0;
-            }
-            
-            acc[category] += amount;
-            return acc;
-        }, {});
-        
-        return totals;
     }
 }
 

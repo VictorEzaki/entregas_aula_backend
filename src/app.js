@@ -1,33 +1,16 @@
 const express = require("express");
-const ExpenseView = require("./views/expense.js");
-const UserView = require('./views/user.js');
-const { sequelize } = require('./database.js');
+
+const ExpenseRouter = require('./router/expense.js');
+const UserRouter = require('./router/user.js');
+const sequelize = require('./models/database.js');
 require('./models/associations');
 
 const app = express();
 
 app.use(express.json());
 
-// Expenses
-app.post("/api/expenses", ExpenseView.create);
-app.get("/api/expenses", ExpenseView.getAll);
-app.get("/api/expenses/:id", ExpenseView.getById);
-app.put("/api/expenses/:id", ExpenseView.update);
-app.delete("/api/expenses/:id", ExpenseView.delete);
-
-// Extras
-app.get("/api/expenses/summary/total", ExpenseView.getTotalExpenses);
-app.get("/api/expenses/summary/category", ExpenseView.getTotalExpensesByCategory);
-
-
-
-// Users
-app.post("/api/users", UserView.create);
-app.get("/api/users", UserView.getAll);
-app.get("/api/users/:id", UserView.getById);
-app.put("/api/users/:id", UserView.update);
-app.delete("/api/users/:id", UserView.delete);
-
+app.use('/api', ExpenseRouter);
+app.use('/api', UserRouter);
 
 async function main() {
   try {

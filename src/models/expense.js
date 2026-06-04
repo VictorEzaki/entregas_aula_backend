@@ -1,4 +1,4 @@
-const { sequelize } = require('./../database.js');
+const sequelize = require('./database.js');
 const { DataTypes } = require('sequelize'); 
 const categoryModel = require('./category.js');
 
@@ -56,10 +56,21 @@ class ExpenseModel {
     }
     
     async update(title, amount, category, date, description, id) {
-        return db.update(
-            { title, amount, category, date, description },
-            { where: { id } }
-        );
+        const expense = await db.findByPk(id);
+        
+        if (!expense) {
+            return null;
+        }
+        
+        expense.title = title;
+        expense.amount = amount;
+        expense.category = category;
+        expense.date = date;
+        expense.description = description;
+        
+        await expense.save();
+        
+        return expense;
     }
     
     async delete(id) {
@@ -69,4 +80,7 @@ class ExpenseModel {
     }
 }
 
-module.exports = new ExpenseModel();
+const expenseModel = new ExpenseModel();
+expenseModel.Expense = db;
+
+module.exports = expenseModel;

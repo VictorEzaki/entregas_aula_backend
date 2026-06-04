@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize'); 
-const { sequelize } = require('../database.js');
+const sequelize = require('./database.js');
 
-const User = sequelize.define('users', {
+const db = sequelize.define('users', {
     id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
@@ -25,52 +25,48 @@ const User = sequelize.define('users', {
 class UserModel {
     
     constructor() {}
-
+    
     async getAllUsers() {
-        return await User.findAll();
+        return db.findAll();
     }
-
+    
     async createUser(email, password, name) {
-        return await User.create({ email, password, name });
+        return db.create({ email, password, name });
     }
-
+    
     async getUserByEmail(email) {
-        return await User.findOne({ where: { email } });
+        return db.findOne({ where: { email } });
     }
-
+    
     async getUserById(id) {
-        return await User.findByPk(id);
+        return db.findByPk(id);
     }
-
+    
     async updateUser(id, email, password, name) {
-        const user = await this.getUserById(id);
-
+        const user = await db.findByPk(id);
+        
         if (!user) {
             return null;
         }
-
+        
         user.email = email;
         user.password = password;
         user.name = name;
-
+        
         await user.save();
+        
         return user;
     }
-
+    
     async deleteUser(id) {
-        const user = await this.getUserById(id);
-
-        if (!user) {
-            return null;
-        }
-
-        await user.destroy();
-        return null;
+        return db.destroy({
+            where: { id }
+        });
     }
-
+    
 }
 
 const userModel = new UserModel();
-userModel.User = User;
+userModel.User = db;
 
 module.exports = userModel;
