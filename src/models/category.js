@@ -9,10 +9,8 @@ const db = sequelize.define('categories', {
     },
     description: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
     },
-}, {
-    updatedAt: false
 });
 
 class CategoryModel {
@@ -33,10 +31,17 @@ class CategoryModel {
     }
     
     async update(description, id) {
-        return db.update(
-            { description },
-            { where: { id } }
-        );
+        const category = await db.findByPk(id);
+        
+        if (!category) {
+            return null;
+        }
+        
+        category.description = description;
+        
+        await category.save();
+        
+        return category;
     }
     
     async delete(id) {

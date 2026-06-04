@@ -1,9 +1,11 @@
 const express = require("express");
 
-const ExpenseRouter = require('./router/expense.js');
-const UserRouter = require('./router/user.js');
 const sequelize = require('./models/database.js');
 require('./models/associations');
+
+const ExpenseRouter = require('./router/expense.js');
+const UserRouter = require('./router/user.js');
+const CategoryRouter = require('./router/category.js');
 
 const app = express();
 
@@ -11,6 +13,7 @@ app.use(express.json());
 
 app.use('/api', ExpenseRouter);
 app.use('/api', UserRouter);
+app.use('/api', CategoryRouter);
 
 async function main() {
   try {
@@ -18,7 +21,7 @@ async function main() {
     await sequelize.authenticate();
     console.log('Autenticação com sucesso!');
     
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
     console.log('Sincronização com banco de dados realizada.');
     console.log('Conexão com o banco de dados estabelecida com sucesso.');
     

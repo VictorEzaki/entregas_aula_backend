@@ -30,13 +30,13 @@ class ExpenseView {
 
     async create(req, res) {
         try {
-            const { title, amount, category, date, description } = req.body;
+            const { title, amount, categoryId, date, description } = req.body;
 
-            const expense = await ExpenseController.create(title, amount, category, date, description);
+            const expense = await ExpenseController.create(title, amount, categoryId, date, description);
 
             res.status(201).json(expense);
         } catch (error) {
-            res.status(error.status).json({
+            res.status(error.status || 500).json({
                 error: error.message,
             });
         }
@@ -44,14 +44,14 @@ class ExpenseView {
 
     async update(req, res) {
         try {
-            const { title, amount, category, date, description } = req.body;
+            const { title, amount, categoryId, date, description } = req.body;
             const { id } = req.params;
 
-            const expense = await ExpenseController.update(title, amount, category, date, description, Number(id));
+            const expense = await ExpenseController.update(title, amount, categoryId, date, description, Number(id));
 
             res.status(200).json(expense);
         } catch (error) {
-            res.status(error.status).json({
+            res.status(error.status || 500).json({
                 error: error.message,
             });
         }

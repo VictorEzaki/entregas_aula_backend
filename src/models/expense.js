@@ -1,6 +1,7 @@
 const sequelize = require('./database.js');
+const { fn, col } = require('sequelize');
 const { DataTypes } = require('sequelize'); 
-const categoryModel = require('./category.js');
+const CategoryModel = require('./category.js');
 
 const db = sequelize.define('expenses', {
     id: {
@@ -51,11 +52,11 @@ class ExpenseModel {
         });
     }
     
-    async create(title, amount, category, date, description) {
-        return db.create({title, amount, category, date, description})
+    async create(title, amount, categoryId, date, description) {
+        return db.create({title, amount, categoryId, date, description})
     }
     
-    async update(title, amount, category, date, description, id) {
+    async update(title, amount, categoryId, date, description, id) {
         const expense = await db.findByPk(id);
         
         if (!expense) {
@@ -64,7 +65,7 @@ class ExpenseModel {
         
         expense.title = title;
         expense.amount = amount;
-        expense.category = category;
+        expense.categoryId = categoryId;
         expense.date = date;
         expense.description = description;
         
@@ -76,6 +77,29 @@ class ExpenseModel {
     async delete(id) {
         return db.destroy({
             where: { id }
+        });
+    }
+
+    async getTotalExpenses() {
+        return db.findAll({
+            attributes: [
+                [fn('SUM', col('amount')), 'total']
+            ]
+        });
+    }
+    
+    async getTotalExpensesByCategory() {
+        return db.findAll({
+            attributes: [
+                'categoryId',
+                [fn('SUM', col('amount')), 'total']
+            ],
+            include: [{
+                model: CategoryModel.Category,
+                as: 'category',
+                attributes: ['description']
+            }],
+            group: ['categoryId', 'category.id']
         });
     }
 }

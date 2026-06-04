@@ -1,4 +1,5 @@
 // validações e regra de negócio
+const CategoryModel = require('../models/category');
 const ExpenseModel = require('../models/expense');
 
 class ExpenseController {
@@ -47,7 +48,7 @@ class ExpenseController {
         return expense;
     }
     
-    async create(title, amount, category, date, description) {
+    async create(title, amount, categoryId, date, description) {
         // validações da regra de negócio
         // O campo title é obrigatório
         if (!title) {
@@ -89,10 +90,16 @@ class ExpenseController {
             throw error;
         }
         
-        // verifica se categoria foi enviado no tipo correto
-        if (category !== undefined && typeof category !== "string") {
-            const error = new Error("Categoria inválida.");
+        if (!categoryId) {
+            const error = new Error('Categoria é um campo obrigatório.');
             error.status = 400;
+            throw error;
+        }
+        
+        const categoryExists = await CategoryModel.getById(categoryId);
+        if (!categoryExists) {
+            const error = new Error('Categoria não encontrada.');
+            error.status = 404;
             throw error;
         }
         
@@ -103,7 +110,7 @@ class ExpenseController {
             throw error;
         }
         
-        const expenseCreated = await ExpenseModel.create(title, amount, category, date, description)
+        const expenseCreated = await ExpenseModel.create(title, amount, categoryId, date, description)
         
         if (!expenseCreated) {
             const error = new Error('Erro ao criar despesa');
@@ -114,7 +121,7 @@ class ExpenseController {
         return expenseCreated;
     }
     
-    async update(title, amount, category, date, description, id) {
+    async update(title, amount, categoryId, date, description, id) {
         // validações da regra de negócio
         // ID é obrigatório para edição
         if (!id) {
@@ -171,10 +178,16 @@ class ExpenseController {
             throw error;
         }
         
-        // verifica se categoria foi enviado no tipo correto
-        if (category !== undefined && typeof category !== "string") {
-            const error = new Error("Categoria inválida.");
+        if (!categoryId) {
+            const error = new Error('Categoria é um campo obrigatório.');
             error.status = 400;
+            throw error;
+        }
+        
+        const categoryExists = await CategoryModel.getById(categoryId);
+        if (!categoryExists) {
+            const error = new Error('Categoria não encontrada.');
+            error.status = 404;
             throw error;
         }
         
@@ -200,7 +213,7 @@ class ExpenseController {
             throw error;
         }
         
-        const expenseUpdated = await ExpenseModel.update(title, amount, category, date, description, id);
+        const expenseUpdated = await ExpenseModel.update(title, amount, categoryId, date, description, id);
         if (!expenseUpdated) {
             const error = new Error('Ocorreu um erro ao editar a despesa!');
             error.status = 500;
@@ -246,23 +259,13 @@ class ExpenseController {
             total: totalExpense
         };
     }
+
+    async getTotalExpenses() {
+        return await ExpenseModel.getTotalExpenses();
+    }
     
     async getTotalExpensesByCategory() {
-        const expenses = await this.getAll();
-        
-        const totals = expenses.reduce((acc, expense) => {
-            const category = expense.category || "Sem Categoria";
-            const amount = Number(expense.amount) || 0;
-            
-            if (!acc[category]) {
-                acc[category] = 0;
-            }
-            
-            acc[category] += amount;
-            return acc;
-        }, {});
-        
-        return totals;
+        return await ExpenseModel.getTotalExpensesByCategory();
     }
 }
 
